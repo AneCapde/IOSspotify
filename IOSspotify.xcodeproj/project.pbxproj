@@ -21,6 +21,8 @@
 		A71F5190273C07750062FC9D /* PlaylistCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F518F273C07750062FC9D /* PlaylistCardView.swift */; };
 		A71F5195273C079B0062FC9D /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F5194273C079B0062FC9D /* PlaylistView.swift */; };
 		A71F519A273C07CE0062FC9D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F5199273C07CE0062FC9D /* RoundedCorner.swift */; };
+		A71F51AD273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A71F51AC273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 */; };
+		A71F51B2273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A71F51B1273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		A71F518F273C07750062FC9D /* PlaylistCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCardView.swift; sourceTree = "<group>"; };
 		A71F5194273C079B0062FC9D /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
 		A71F5199273C07CE0062FC9D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		A71F51AC273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "IOSspotify_songs_Bruno Mars.mp3"; path = "IOSspotify/IOSspotify_songs_Bruno Mars.mp3"; sourceTree = SOURCE_ROOT; };
+		A71F51B1273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "IOSspotify_songs_Justin Bieber - Ghost.mp3"; path = "IOSspotify/IOSspotify_songs_Justin Bieber - Ghost.mp3"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A71F519E273C081D0062FC9D /* songs */ = {
+			isa = PBXGroup;
+			children = (
+				A71F51B1273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */,
+				A71F51AC273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 */,
+			);
+			path = songs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,9 +295,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A71F5124273BEB8D0062FC9D /* Preview Assets.xcassets in Resources */,
+				A71F51B2273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 in Resources */,
 				A71F5121273BEB8D0062FC9D /* Assets.xcassets in Resources */,
-				12FE0B79273C127200643096 /* IOSspotify_songs_Bruno Mars.mp3 in Resources */,
-				12FE0B7A273C127200643096 /* IOSspotify_songs_Justin Bieber - Ghost.mp3 in Resources */,
+				A71F51AD273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
