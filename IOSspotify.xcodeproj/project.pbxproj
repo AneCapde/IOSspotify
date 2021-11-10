@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12FE0B79273C127200643096 /* IOSspotify_songs_Bruno Mars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 12FE0B77273C127200643096 /* IOSspotify_songs_Bruno Mars.mp3 */; };
-		12FE0B7A273C127200643096 /* IOSspotify_songs_Justin Bieber - Ghost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 12FE0B78273C127200643096 /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */; };
 		A71F511D273BEB8C0062FC9D /* IOSspotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F511C273BEB8C0062FC9D /* IOSspotifyApp.swift */; };
 		A71F511F273BEB8C0062FC9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F511E273BEB8C0062FC9D /* ContentView.swift */; };
 		A71F5121273BEB8D0062FC9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71F5120273BEB8D0062FC9D /* Assets.xcassets */; };
@@ -43,8 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12FE0B77273C127200643096 /* IOSspotify_songs_Bruno Mars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "IOSspotify_songs_Bruno Mars.mp3"; path = "IOSspotify/IOSspotify_songs_Bruno Mars.mp3"; sourceTree = SOURCE_ROOT; };
-		12FE0B78273C127200643096 /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "IOSspotify_songs_Justin Bieber - Ghost.mp3"; path = "IOSspotify/IOSspotify_songs_Justin Bieber - Ghost.mp3"; sourceTree = SOURCE_ROOT; };
+		12FE0B77273C127200643096 /* IOSspotify_songs_Bruno Mars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "IOSspotify_songs_Bruno Mars.mp3"; path = "IOSspotify/New Group/IOSspotify_songs_Bruno Mars.mp3"; sourceTree = SOURCE_ROOT; };
+		12FE0B78273C127200643096 /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "IOSspotify_songs_Justin Bieber - Ghost.mp3"; path = "IOSspotify/New Group/IOSspotify_songs_Justin Bieber - Ghost.mp3"; sourceTree = SOURCE_ROOT; };
+		12FE0BA3273C15AD00643096 /* songs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = songs; sourceTree = "<group>"; };
 		A71F5119273BEB8C0062FC9D /* IOSspotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSspotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71F511C273BEB8C0062FC9D /* IOSspotifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSspotifyApp.swift; sourceTree = "<group>"; };
 		A71F511E273BEB8C0062FC9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +100,15 @@
 			path = songs;
 			sourceTree = "<group>";
 		};
+		12FE0B81273C134100643096 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A71F51B1273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */,
+				A71F51AC273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		A71F5110273BEB8B0062FC9D = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +116,7 @@
 				A71F512D273BEB8D0062FC9D /* IOSspotifyTests */,
 				A71F5138273BEB8D0062FC9D /* IOSspotifyUITests */,
 				A71F511A273BEB8C0062FC9D /* Products */,
+				12FE0B81273C134100643096 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +133,7 @@
 		A71F511B273BEB8C0062FC9D /* IOSspotify */ = {
 			isa = PBXGroup;
 			children = (
+				12FE0BA3273C15AD00643096 /* songs */,
 				12FE0B76273C125E00643096 /* songs */,
 				A71F5181273C06DE0062FC9D /* Views */,
 				A71F5178273C06740062FC9D /* Models */,
@@ -180,15 +190,6 @@
 				A71F5199273C07CE0062FC9D /* RoundedCorner.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		A71F519E273C081D0062FC9D /* songs */ = {
-			isa = PBXGroup;
-			children = (
-				A71F51B1273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */,
-				A71F51AC273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 */,
-			);
-			path = songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
