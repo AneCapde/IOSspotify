@@ -43,11 +43,11 @@ struct PlayingView: View {
                 }.edgesIgnoringSafeArea(.bottom).frame(height: 200, alignment: .center)
             }
         }.onAppear(){
-            playSong()
+            playSong(playingSong: song.file)
         }
     }
-    func playSong(){
-        let urlpath     = Bundle.main.path(forResource: "song1", ofType: "mp3")
+    func playSong(playingSong: String){
+        let urlpath     = Bundle.main.path(forResource: playingSong, ofType: "mp3")
         let url =  URL(fileURLWithPath: urlpath!)
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
@@ -70,9 +70,9 @@ struct PlayingView: View {
             if currentIndex == album.songs.count - 1{
                 
             } else {
-                //player.pause()
+                player.pause()
                 song = album.songs[currentIndex + 1]
-                self.playSong()
+                self.playSong(playingSong: song.file)
             }
         }
     }
@@ -81,9 +81,9 @@ struct PlayingView: View {
             if currentIndex == 0{
                 
             } else {
-                //player.pause()
+                player.pause()
                 song = album.songs[currentIndex - 1]
-                self.playSong()
+                self.playSong(playingSong: song.file)
             }
         }
     }
