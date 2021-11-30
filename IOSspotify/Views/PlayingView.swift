@@ -4,7 +4,6 @@
 //
 //  Created by Ane Capdevila on 17/11/2021.
 //
-
 import SwiftUI
 import AVFoundation
 
@@ -90,4 +89,3 @@ struct PlayingView: View {
     }
     
 }
-

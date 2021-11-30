@@ -19,8 +19,23 @@
 		A71F5190273C07750062FC9D /* PlaylistCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F518F273C07750062FC9D /* PlaylistCardView.swift */; };
 		A71F5195273C079B0062FC9D /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F5194273C079B0062FC9D /* PlaylistView.swift */; };
 		A71F519A273C07CE0062FC9D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F5199273C07CE0062FC9D /* RoundedCorner.swift */; };
-		A71F51AD273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A71F51AC273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 */; };
-		A71F51B2273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A71F51B1273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */; };
+		A792785427568A9E00AAD171 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792785327568A9E00AAD171 /* AlbumViewModel.swift */; };
+		A792785A27568B4E00AAD171 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792785927568B4E00AAD171 /* UserViewModel.swift */; };
+		A792785F27568B7400AAD171 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792785E27568B7400AAD171 /* User.swift */; };
+		A792787727568BCB00AAD171 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792787627568BCB00AAD171 /* Song.swift */; };
+		A792787C27568BDA00AAD171 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792787B27568BDA00AAD171 /* Album.swift */; };
+		A792788127568C2A00AAD171 /* LogInSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792788027568C2A00AAD171 /* LogInSignInView.swift */; };
+		A792788627568C5000AAD171 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792788527568C5000AAD171 /* LogInView.swift */; };
+		A792788B27568C7F00AAD171 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792788A27568C7F00AAD171 /* MenuView.swift */; };
+		A792789027568CA900AAD171 /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792788F27568CA900AAD171 /* PlayingView.swift */; };
+		A792789527568CD000AAD171 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792789427568CD000AAD171 /* SignInView.swift */; };
+		A792789A27568D3000AAD171 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792789927568D3000AAD171 /* Data.swift */; };
+		A792789F27568D7100AAD171 /* DB_manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792789E27568D7100AAD171 /* DB_manager.swift */; };
+		A79278A427568D8200AAD171 /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79278A327568D8200AAD171 /* Blur.swift */; };
+		A79278F027568E7E00AAD171 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79278DF27568E7700AAD171 /* SQLite.framework */; };
+		A79278F127568E7E00AAD171 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A79278DF27568E7700AAD171 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A792790827568F6900AAD171 /* song2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A79278FF27568F6900AAD171 /* song2.mp3 */; };
+		A792790927568F6900AAD171 /* song1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A792790727568F6900AAD171 /* song1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,12 +53,72 @@
 			remoteGlobalIDString = A71F5118273BEB8C0062FC9D;
 			remoteInfo = IOSspotify;
 		};
+		A79278DE27568E7700AAD171 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A79278D127568E7700AAD171 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		A79278E027568E7700AAD171 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A79278D127568E7700AAD171 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		A79278E227568E7700AAD171 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A79278D127568E7700AAD171 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		A79278E427568E7700AAD171 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A79278D127568E7700AAD171 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		A79278E627568E7700AAD171 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A79278D127568E7700AAD171 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		A79278E827568E7700AAD171 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A79278D127568E7700AAD171 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		A79278EA27568E7700AAD171 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A79278D127568E7700AAD171 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A79278F227568E7F00AAD171 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A79278F127568E7E00AAD171 /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		12FE0B77273C127200643096 /* IOSspotify_songs_Bruno Mars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "IOSspotify_songs_Bruno Mars.mp3"; path = "IOSspotify/New Group/IOSspotify_songs_Bruno Mars.mp3"; sourceTree = SOURCE_ROOT; };
-		12FE0B78273C127200643096 /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "IOSspotify_songs_Justin Bieber - Ghost.mp3"; path = "IOSspotify/New Group/IOSspotify_songs_Justin Bieber - Ghost.mp3"; sourceTree = SOURCE_ROOT; };
-		12FE0BA3273C15AD00643096 /* songs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = songs; sourceTree = "<group>"; };
 		A71F5119273BEB8C0062FC9D /* IOSspotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSspotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71F511C273BEB8C0062FC9D /* IOSspotifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSspotifyApp.swift; sourceTree = "<group>"; };
 		A71F511E273BEB8C0062FC9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,8 +137,22 @@
 		A71F518F273C07750062FC9D /* PlaylistCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCardView.swift; sourceTree = "<group>"; };
 		A71F5194273C079B0062FC9D /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
 		A71F5199273C07CE0062FC9D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
-		A71F51AC273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "IOSspotify_songs_Bruno Mars.mp3"; path = "IOSspotify/IOSspotify_songs_Bruno Mars.mp3"; sourceTree = SOURCE_ROOT; };
-		A71F51B1273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "IOSspotify_songs_Justin Bieber - Ghost.mp3"; path = "IOSspotify/IOSspotify_songs_Justin Bieber - Ghost.mp3"; sourceTree = SOURCE_ROOT; };
+		A792785327568A9E00AAD171 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
+		A792785927568B4E00AAD171 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		A792785E27568B7400AAD171 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A792787627568BCB00AAD171 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		A792787B27568BDA00AAD171 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		A792788027568C2A00AAD171 /* LogInSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInSignInView.swift; sourceTree = "<group>"; };
+		A792788527568C5000AAD171 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		A792788A27568C7F00AAD171 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A792788F27568CA900AAD171 /* PlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingView.swift; sourceTree = "<group>"; };
+		A792789427568CD000AAD171 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		A792789927568D3000AAD171 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		A792789E27568D7100AAD171 /* DB_manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB_manager.swift; sourceTree = "<group>"; };
+		A79278A327568D8200AAD171 /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
+		A79278D127568E7700AAD171 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		A79278FF27568F6900AAD171 /* song2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song2.mp3; sourceTree = "<group>"; };
+		A792790727568F6900AAD171 /* song1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A79278F027568E7E00AAD171 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,32 +181,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		12FE0B76273C125E00643096 /* songs */ = {
-			isa = PBXGroup;
-			children = (
-				12FE0B77273C127200643096 /* IOSspotify_songs_Bruno Mars.mp3 */,
-				12FE0B78273C127200643096 /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */,
-			);
-			path = songs;
-			sourceTree = "<group>";
-		};
-		12FE0B81273C134100643096 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				A71F51B1273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 */,
-				A71F51AC273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		A71F5110273BEB8B0062FC9D = {
 			isa = PBXGroup;
 			children = (
+				A79278D127568E7700AAD171 /* SQLite.xcodeproj */,
 				A71F511B273BEB8C0062FC9D /* IOSspotify */,
 				A71F512D273BEB8D0062FC9D /* IOSspotifyTests */,
 				A71F5138273BEB8D0062FC9D /* IOSspotifyUITests */,
 				A71F511A273BEB8C0062FC9D /* Products */,
-				12FE0B81273C134100643096 /* Recovered References */,
+				A79278EF27568E7E00AAD171 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,14 +206,17 @@
 		A71F511B273BEB8C0062FC9D /* IOSspotify */ = {
 			isa = PBXGroup;
 			children = (
-				12FE0BA3273C15AD00643096 /* songs */,
-				12FE0B76273C125E00643096 /* songs */,
+				A79278F527568EB300AAD171 /* Audio */,
+				A792784727568A5F00AAD171 /* ViewModels */,
 				A71F5181273C06DE0062FC9D /* Views */,
 				A71F5178273C06740062FC9D /* Models */,
 				A71F511C273BEB8C0062FC9D /* IOSspotifyApp.swift */,
 				A71F5120273BEB8D0062FC9D /* Assets.xcassets */,
 				A71F5125273BEB8D0062FC9D /* Info.plist */,
 				A71F5122273BEB8D0062FC9D /* Preview Content */,
+				A792789927568D3000AAD171 /* Data.swift */,
+				A792789E27568D7100AAD171 /* DB_manager.swift */,
+				A79278A327568D8200AAD171 /* Blur.swift */,
 			);
 			path = IOSspotify;
 			sourceTree = "<group>";
@@ -175,6 +251,9 @@
 			isa = PBXGroup;
 			children = (
 				A71F5179273C06900062FC9D /* ModelMusicPlayer.swift */,
+				A792785E27568B7400AAD171 /* User.swift */,
+				A792787627568BCB00AAD171 /* Song.swift */,
+				A792787B27568BDA00AAD171 /* Album.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,8 +267,52 @@
 				A71F518F273C07750062FC9D /* PlaylistCardView.swift */,
 				A71F5194273C079B0062FC9D /* PlaylistView.swift */,
 				A71F5199273C07CE0062FC9D /* RoundedCorner.swift */,
+				A792788027568C2A00AAD171 /* LogInSignInView.swift */,
+				A792788527568C5000AAD171 /* LogInView.swift */,
+				A792788A27568C7F00AAD171 /* MenuView.swift */,
+				A792788F27568CA900AAD171 /* PlayingView.swift */,
+				A792789427568CD000AAD171 /* SignInView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A792784727568A5F00AAD171 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A792785327568A9E00AAD171 /* AlbumViewModel.swift */,
+				A792785927568B4E00AAD171 /* UserViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A79278D227568E7700AAD171 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A79278DF27568E7700AAD171 /* SQLite.framework */,
+				A79278E127568E7700AAD171 /* SQLiteTests iOS.xctest */,
+				A79278E327568E7700AAD171 /* SQLite.framework */,
+				A79278E527568E7700AAD171 /* SQLiteTests Mac.xctest */,
+				A79278E727568E7700AAD171 /* SQLite.framework */,
+				A79278E927568E7700AAD171 /* SQLiteTests tvOS.xctest */,
+				A79278EB27568E7700AAD171 /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A79278EF27568E7E00AAD171 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A79278F527568EB300AAD171 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				A792790727568F6900AAD171 /* song1.mp3 */,
+				A79278FF27568F6900AAD171 /* song2.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +325,7 @@
 				A71F5115273BEB8C0062FC9D /* Sources */,
 				A71F5116273BEB8C0062FC9D /* Frameworks */,
 				A71F5117273BEB8C0062FC9D /* Resources */,
+				A79278F227568E7F00AAD171 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,6 +405,12 @@
 			mainGroup = A71F5110273BEB8B0062FC9D;
 			productRefGroup = A71F511A273BEB8C0062FC9D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A79278D227568E7700AAD171 /* Products */;
+					ProjectRef = A79278D127568E7700AAD171 /* SQLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A71F5118273BEB8C0062FC9D /* IOSspotify */,
@@ -290,15 +420,67 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		A79278DF27568E7700AAD171 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = A79278DE27568E7700AAD171 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A79278E127568E7700AAD171 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = A79278E027568E7700AAD171 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A79278E327568E7700AAD171 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = A79278E227568E7700AAD171 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A79278E527568E7700AAD171 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = A79278E427568E7700AAD171 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A79278E727568E7700AAD171 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = A79278E627568E7700AAD171 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A79278E927568E7700AAD171 /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = A79278E827568E7700AAD171 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A79278EB27568E7700AAD171 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = A79278EA27568E7700AAD171 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		A71F5117273BEB8C0062FC9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A71F5124273BEB8D0062FC9D /* Preview Assets.xcassets in Resources */,
-				A71F51B2273C11640062FC9D /* IOSspotify_songs_Justin Bieber - Ghost.mp3 in Resources */,
+				A792790927568F6900AAD171 /* song1.mp3 in Resources */,
 				A71F5121273BEB8D0062FC9D /* Assets.xcassets in Resources */,
-				A71F51AD273C115D0062FC9D /* IOSspotify_songs_Bruno Mars.mp3 in Resources */,
+				A792790827568F6900AAD171 /* song2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,14 +505,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A792789527568CD000AAD171 /* SignInView.swift in Sources */,
+				A792788627568C5000AAD171 /* LogInView.swift in Sources */,
+				A792787C27568BDA00AAD171 /* Album.swift in Sources */,
+				A792787727568BCB00AAD171 /* Song.swift in Sources */,
+				A792785427568A9E00AAD171 /* AlbumViewModel.swift in Sources */,
 				A71F519A273C07CE0062FC9D /* RoundedCorner.swift in Sources */,
 				A71F511F273BEB8C0062FC9D /* ContentView.swift in Sources */,
+				A792785A27568B4E00AAD171 /* UserViewModel.swift in Sources */,
 				A71F5195273C079B0062FC9D /* PlaylistView.swift in Sources */,
 				A71F5183273C06F10062FC9D /* BlurView.swift in Sources */,
+				A792788B27568C7F00AAD171 /* MenuView.swift in Sources */,
 				A71F5190273C07750062FC9D /* PlaylistCardView.swift in Sources */,
 				A71F511D273BEB8C0062FC9D /* IOSspotifyApp.swift in Sources */,
 				A71F5188273C07400062FC9D /* LibraryView.swift in Sources */,
+				A792789027568CA900AAD171 /* PlayingView.swift in Sources */,
+				A792789F27568D7100AAD171 /* DB_manager.swift in Sources */,
 				A71F517A273C06900062FC9D /* ModelMusicPlayer.swift in Sources */,
+				A792789A27568D3000AAD171 /* Data.swift in Sources */,
+				A79278A427568D8200AAD171 /* Blur.swift in Sources */,
+				A792788127568C2A00AAD171 /* LogInSignInView.swift in Sources */,
+				A792785F27568B7400AAD171 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

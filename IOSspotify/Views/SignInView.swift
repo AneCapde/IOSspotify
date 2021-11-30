@@ -1,10 +1,9 @@
-//
+///
 //  SignInView.swift
 //  IOSspotifyAne
 //
 //  Created by Ane Capdevila on 17/11/2021.
 //
-
 import SwiftUI
 
 struct SignInView: View {
