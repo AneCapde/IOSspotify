@@ -76,7 +76,7 @@ struct PlayingView: View {
             }
         }
     }
-    func previous() {
+     func previous() {
         if let currentIndex = album.songs.firstIndex(of: song){
             if currentIndex == 0{
                 
