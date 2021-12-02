@@ -19,6 +19,7 @@ struct PlayingView: View {
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
             Blur(style: .dark).edgesIgnoringSafeArea(.all)
+            
             VStack{
                 Spacer()
                 AlbumArt(album: album, isWithText: false)

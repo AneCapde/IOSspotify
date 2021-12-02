@@ -18,10 +18,11 @@ struct TabBarMenu: View {
             
                     
                     
-                    TabView(selection: $current,
-                            content:  {
+                    TabView(selection: $current){
                                 
-                                MenuView(data: data).tabItem {
+                        MenuView(data: data)
+                                    //Text("Lib")
+                                    .tabItem {
                                     Image(systemName: "rectangle.stack.fill")
                                     
                                     Text("Library") }.tag(1)
@@ -33,7 +34,8 @@ struct TabBarMenu: View {
                                     Text("Search")
                                     
                                     }.tag(2)
-                            })
+                            }
+                    MiniPlayer()
                     
                     })
         
