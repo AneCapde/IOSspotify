@@ -28,7 +28,7 @@ struct TabBarMenu: View {
                                     Text("Library") }.tag(1)
                                
                                 
-                                Text("Search").tabItem {
+                        SearchView(data: data, currentDisplayArray: data.songs).tabItem {
                                     Image(systemName: "magnifyingglass")
                                     
                                     Text("Search")
@@ -37,7 +37,6 @@ struct TabBarMenu: View {
                             }
                     
                     MiniPlayer(animation: animation, expand: $expand)
-                    
                     })
         
     }
