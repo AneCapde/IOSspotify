@@ -10,12 +10,15 @@ import AVFoundation
 
 
 class ModelMusicPlayer: ObservableObject{
+    
     static let singletonMusicPlayer = ModelMusicPlayer()
         
     @Published var currentSong: MPMediaItem?
     @Published var playlists = [MPMediaItemCollection]()
     @Published var librarySongs = [MPMediaItem]()
+    
     @Published var audio: AVAudioPlayer?
+    
     
     
     

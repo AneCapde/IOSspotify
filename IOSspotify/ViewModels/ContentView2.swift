@@ -9,11 +9,17 @@ import SwiftUI
 import MediaPlayer
 import AVFoundation
 
+
+//menu view
+
 struct Contentview2: View {
     @ObservedObject var modelView = ModelMusicPlayer.singletonMusicPlayer
     var body: some View {
         TabView {
-            PlaylistView()
+            VStack(.spacing: 0){
+                PlaylistView()
+                TabBarMenu()
+            }
                 .enviromentObject(modelView)
                 .tabItem {
                     VStack {

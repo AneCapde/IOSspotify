@@ -5,6 +5,7 @@
 //  Created by Ane Capdevila on 17/11/2021.
 //
 import Foundation
+import MediaPlayer
 
 struct Song : Hashable {
     var id : Int64 = 0
