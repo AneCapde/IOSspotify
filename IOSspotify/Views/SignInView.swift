@@ -7,7 +7,10 @@
 import SwiftUI
 
 struct SignInView: View {
+    
     @ObservedObject var userViewModel: UserViewModel
+    @ObservedObject var viewModel : ViewModelMusicPlayer
+   
     @StateObject var data = Data()
     let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
     
@@ -33,7 +36,7 @@ struct SignInView: View {
                 .cornerRadius(5.0)
                 .padding()
             
-            NavigationLink(destination: TabBarMenu(data: data)) {
+            NavigationLink(destination: TabBarMenu(viewModel: viewModel, data: data)) {
             Text("SIGN IN")}
                 .font(.headline)
                 .foregroundColor(.white)
@@ -61,6 +64,6 @@ struct SignText: View {
 }
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(userViewModel: UserViewModel())
+        SignInView(userViewModel: UserViewModel(), viewModel: ViewModelMusicPlayer())
     }
 }

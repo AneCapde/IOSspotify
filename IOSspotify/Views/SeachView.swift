@@ -12,6 +12,7 @@ struct SearchView: View {
     @ObservedObject var data : Data
     @State var search = ""
     @State var currentDisplayArray: [Song]
+    @ObservedObject var viewModel : ViewModelMusicPlayer
     
     var columns = Array(repeating: GridItem(.flexible(), spacing: 20), count:1)
     
@@ -50,7 +51,7 @@ struct SearchView: View {
                 
                 LazyVGrid(columns:columns , spacing:20){
                     ForEach(self.currentDisplayArray , id:\.self, content: {
-                        song in SongCell(album: getAlbum(song: song), song: song)
+                        song in SongCell(album: getAlbum(song: song), song: song, viewModel: viewModel)
                     })
                 }
                 .padding(.top, 10)
@@ -87,6 +88,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(data: Data(), currentDisplayArray: [Song]())
+        SearchView(data: Data(), currentDisplayArray: [Song](), viewModel: ViewModelMusicPlayer())
     }
 }

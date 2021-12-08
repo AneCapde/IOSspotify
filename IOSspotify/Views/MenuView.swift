@@ -7,9 +7,10 @@
 import SwiftUI
 
 struct MenuView: View {
+    
     @State private var currentAlbum : Album?
     @ObservedObject var data : Data
-        
+    @ObservedObject var viewModel : ViewModelMusicPlayer
     var body: some View {
         ScrollView{
             ScrollView(.horizontal, showsIndicators: false, content: {
@@ -25,7 +26,7 @@ struct MenuView: View {
         
         LazyVStack {
             ForEach((self.currentAlbum?.songs ?? self.data.albums.first?.songs) ?? [Song(id: 0, name: "song1", time: "2:36")] , id:\.self, content: {
-                song in SongCell(album: currentAlbum ?? data.albums.first!, song: song)
+                song in SongCell(album: currentAlbum ?? data.albums.first!, song: song, viewModel: viewModel)
             })
         }
     }
@@ -56,9 +57,13 @@ struct AlbumArt: View {
 struct SongCell: View {
     var album : Album
     var song : Song
+    @ObservedObject var viewModel : ViewModelMusicPlayer
+    @Namespace var animation
+    
     var body: some View {
-        NavigationLink(
-            destination: PlayingView(album: album, song: song), label: {
+    
+        
+           
             HStack{
                 ZStack{
                     Circle()
@@ -72,13 +77,24 @@ struct SongCell: View {
                 Text(song.name).bold()
                 Spacer()
                 Text(song.time)
-            }.padding(20)
-        }).buttonStyle(PlainButtonStyle())
-    }
+            }
+            .padding(20)
+            .onTapGesture {
+                
+                
+                viewModel.updateCurrentAlbum(album: album)
+                viewModel.updateCurrentSong(song: song)
+                viewModel.playSong()
+                   // MiniPlayer(animation: Namespace.ID, expand: false, viewModel: viewModel)
+                
+            }
+          
+        }
 }
+
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(data: Data())
+        MenuView(data: Data(), viewModel: ViewModelMusicPlayer())
     }
 }

@@ -20,6 +20,8 @@ class ModelMusicPlayer: ObservableObject{
     @Published var audio: AVAudioPlayer?
     
     
+    @Published var expand = false
+    @Published var currentTabBarPage = 2
     
     
   

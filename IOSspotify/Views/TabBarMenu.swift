@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBarMenu: View {
+    @ObservedObject var viewModel : ViewModelMusicPlayer
     @State var current=2;
     @StateObject var data = Data()
     //minip properties
@@ -20,7 +21,7 @@ struct TabBarMenu: View {
                 {
                     TabView(selection: $current){
                                 
-                        MenuView(data: data)
+                        MenuView(data: data, viewModel: viewModel)
                                     //Text("Lib")
                                     .tabItem {
                                     Image(systemName: "rectangle.stack.fill")
@@ -28,7 +29,7 @@ struct TabBarMenu: View {
                                     Text("Library") }.tag(1)
                                
                                 
-                        SearchView(data: data, currentDisplayArray: data.songs).tabItem {
+                        SearchView(data: data, currentDisplayArray: data.songs, viewModel: viewModel).tabItem {
                                     Image(systemName: "magnifyingglass")
                                     
                                     Text("Search")
@@ -36,7 +37,7 @@ struct TabBarMenu: View {
                                     }.tag(2)
                             }
                     
-                    MiniPlayer(animation: animation, expand: $expand)
+                    MiniPlayer(animation: animation, expand: $expand, viewModel: viewModel)
                     })
         
     }
@@ -44,6 +45,6 @@ struct TabBarMenu: View {
 
 struct TolBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarMenu()
+        TabBarMenu(viewModel: ViewModelMusicPlayer())
     }
 }

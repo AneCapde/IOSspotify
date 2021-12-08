@@ -11,13 +11,13 @@ import AVFoundation
 
 struct MiniPlayer: View {
     
-//    @State var album : Album
-//    @State var song : Song
-//    @State var isPlaying : Bool = false
-//    @State var player = AVPlayer()
+
+    
     var animation: Namespace.ID
     @Binding var expand: Bool
     var height = UIScreen.main.bounds.height / 3
+    @StateObject var data = Data()
+    @ObservedObject var viewModel : ViewModelMusicPlayer
  
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
     
@@ -42,14 +42,14 @@ struct MiniPlayer: View {
 
                 if expand{Spacer(minLength: 0)}
                 
-                Image("cover_1")
+                Image(viewModel.getAlbumImageName())
                     .resizable()
                     .aspectRatio(contentMode:   .fill)
                     .frame(width: expand ? height : 55 , height: expand ? height :55)
                     .cornerRadius(15)
                 
                 if !expand{
-                    Text("aa")
+                    Text(viewModel.getSongName())
                         .font(  .title2)
                         .fontWeight(    .bold)
                         .matchedGeometryEffect(id: "Label", in: animation)
@@ -58,7 +58,7 @@ struct MiniPlayer: View {
                 Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
         
                 if !expand{
-                    ButtonsView()
+                    ButtonsView(viewModel: viewModel)
                 }
             }
             .padding(.horizontal)
@@ -69,7 +69,7 @@ struct MiniPlayer: View {
 
                 HStack{
                     if expand {
-                    Text("aa")
+                    Text(viewModel.getSongName())
                         .font(.title2)
                         .foregroundColor(.primary)
                         .fontWeight(.bold)
@@ -79,7 +79,7 @@ struct MiniPlayer: View {
                 }
                 .padding(.top)
                 
-                HStack{ButtonsView()}
+                HStack{ButtonsView(viewModel: viewModel)}
                 Spacer(minLength: 0)
                 
                 HStack(spacing: 15){
@@ -139,66 +139,29 @@ struct MiniPlayer: View {
         }
     }
     
-//        func playSong(playingSong: String){
-//            let urlpath     = Bundle.main.path(forResource: playingSong, ofType: "mp3")
-//            let url =  URL(fileURLWithPath: urlpath!)
-//            do {
-//                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-//            }catch{
-//                //report error
-//            }
-//            player = AVPlayer(url: url)
-//            player.play()
-//        }
-//        func playPause(){
-//            self.isPlaying.toggle()
-//            if isPlaying == false {
-//                player.pause()
-//            }else {
-//                player.play()
-//            }
-//        }
-//        func next() {
-//            if let currentIndex = album.songs.firstIndex(of: song){
-//                if currentIndex == album.songs.count - 1{
-//
-//                } else {
-//                    player.pause()
-//                    song = album.songs[currentIndex + 1]
-//                    self.playSong(playingSong: song.file)
-//                }
-//            }
-//        }
-//        func previous() {
-//            if let currentIndex = album.songs.firstIndex(of: song){
-//                if currentIndex == 0{
-//
-//                } else {
-//                    player.pause()
-//                    song = album.songs[currentIndex - 1]
-//                    self.playSong(playingSong: song.file)
-//                }
-//            }
- //   }
+
 }
 struct ButtonsView: View{
+    
+    @ObservedObject var viewModel : ViewModelMusicPlayer
+   
 
     var body: some View{
         Spacer()
-        Button(action: {}, label: {
+        Button(action: viewModel.previous, label: {
                 Image(systemName:"backward.fill")
                     .font(.title2)
                     .foregroundColor(.primary)
             
         })
         Spacer()
-        Button(action: {}, label: {
-                Image(systemName: "play.fill")
+        Button(action: viewModel.playPause, label: {
+            Image(systemName:  viewModel.playingState())
                     .font(.title2)
                     .foregroundColor(.primary)
         })
         Spacer()
-        Button(action: {}, label: {
+        Button(action: viewModel.next, label: {
                 Image(systemName:"forward.fill")
                     .font(.title2)
                     .foregroundColor(.primary)
@@ -206,6 +169,7 @@ struct ButtonsView: View{
         })
         Spacer()
     }
+
 }
 //struct MiniPlayerPreview: PreviewProvider {
 //    static var previews: some View {

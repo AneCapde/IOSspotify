@@ -7,13 +7,15 @@
 import SwiftUI
 
 struct LogInSigInView: View {
+    
+    @ObservedObject var viewModel : ViewModelMusicPlayer
     @StateObject var userViewModel = UserViewModel()
     var body: some View {
         NavigationView{
             VStack {
                 WelcomeText()
                 ImageIcon()
-                NavigationLink(destination: LogInView(userViewModel: userViewModel)) {
+                NavigationLink(destination: LogInView(userViewModel: userViewModel, viewModel: viewModel)) {
                 Text("LOG IN")}
                     .font(.headline)
                     .foregroundColor(.white)
@@ -22,7 +24,7 @@ struct LogInSigInView: View {
                     .background(Color.purple)
                     .cornerRadius(1.0)
                     
-                NavigationLink(destination: SignInView(userViewModel: userViewModel)) {
+                NavigationLink(destination: SignInView(userViewModel: userViewModel, viewModel: viewModel)) {
                 Text("SIGN IN")}
                     .font(.headline)
                     .foregroundColor(.white)
@@ -66,6 +68,6 @@ struct ImageIcon: View {
 
 struct LogInSigInView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInSigInView()
+        LogInSigInView(viewModel: ViewModelMusicPlayer())
     }
 }
