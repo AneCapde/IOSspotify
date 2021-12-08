@@ -33,7 +33,7 @@ struct SignInView: View {
                 .cornerRadius(5.0)
                 .padding()
             
-            NavigationLink(destination: MenuView(data: data)) {
+            NavigationLink(destination: TabBarMenu(data: data)) {
             Text("SIGN IN")}
                 .font(.headline)
                 .foregroundColor(.white)

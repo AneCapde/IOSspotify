@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct SearchView: View {
     @ObservedObject var data : Data
@@ -30,14 +31,14 @@ struct SearchView: View {
                 }
                 
                 HStack(spacing: 15){
+                    
+                    TextField("Search", text: $search,
+                              onCommit: {self.searchSong()})
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(.primary)
                         .onTapGesture {
                             self.searchSong()
                         }
-                    
-                    
-                    TextField("Search", text: $search)
                     
                 }
                 .padding(.vertical,10)
@@ -83,6 +84,7 @@ struct SearchView: View {
         self.currentDisplayArray = termporaryArray
     }
 }
+
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView(data: Data(), currentDisplayArray: [Song]())
