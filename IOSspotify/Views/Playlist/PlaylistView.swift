@@ -12,10 +12,13 @@ struct PlaylistView: View {
     
     var body: some View {
         NavigationView{
-            List{
-                ForEach(model.playlists, id: \.self) { playlist in
-                    PlaylistCardView(playlist: playlist)
+            ScrollView{
+                LazyVGrid(columns: [GridItem(.flexible(), spacing: 20),GridItem(.flexible(), spacing: 20)], spacing: 20){
+                    ForEach(model.playlists, id: \.self) { song in
+                        PlaylistCardView(playlist: song)
+                    }
                 }
+                .padding(.horizontal, 20)
             }
             .navigationBarTitle(Text("Playlists"), displayMode: .automatic)
         }

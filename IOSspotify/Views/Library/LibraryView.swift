@@ -13,11 +13,11 @@ struct LibraryView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(model.librarySongs, id: \.self){ playlist in
-                    
-                    Text("BUG")
+                ForEach(model.librarySongs, id: \.self){ song in
+                    SongCardView(song: song)
                 }
             }
+            .navigationBarTitle("All Songs", displayMode: .automatic)
         }
     }
 }
