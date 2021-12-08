@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct TabBarMenu: View {
-    @State var current=1;
+    @State var current=2;
     @StateObject var data = Data()
+    //minip properties
+    @State  var expand = false
+    @Namespace var animation
     
     var body: some View {
         
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content:
                 {
-            
-                    
-                    
                     TabView(selection: $current){
                                 
                         MenuView(data: data)
@@ -28,15 +28,15 @@ struct TabBarMenu: View {
                                     Text("Library") }.tag(1)
                                
                                 
-                                Text("Search").tabItem {
+                        SearchView(data: data, currentDisplayArray: data.songs).tabItem {
                                     Image(systemName: "magnifyingglass")
                                     
                                     Text("Search")
                                     
                                     }.tag(2)
                             }
-                    MiniPlayer()
                     
+                    MiniPlayer(animation: animation, expand: $expand)
                     })
         
     }
