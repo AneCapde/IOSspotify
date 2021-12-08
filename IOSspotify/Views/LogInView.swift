@@ -17,13 +17,13 @@ struct LogInView: View {
     var body: some View {
         VStack {
             LoginText()
-            TextField("Username", text: $userViewModel.user.name)
+            TextField("Username", text: $userViewModel.userModel.name)
                 .padding()
                 .background(lightGreyColor)
                 .cornerRadius(5.0)
                 .padding()
             
-            SecureField("Password", text: $userViewModel.user.password)
+            SecureField("Password", text: $userViewModel.userModel.password)
                 .padding()
                 .background(lightGreyColor)
                 .cornerRadius(5.0)
