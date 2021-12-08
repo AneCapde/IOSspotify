@@ -39,13 +39,15 @@
 		A792789027568CA900AAD171 /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792788F27568CA900AAD171 /* PlayingView.swift */; };
 		A792789527568CD000AAD171 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792789427568CD000AAD171 /* SignInView.swift */; };
 		A792789A27568D3000AAD171 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792789927568D3000AAD171 /* Data.swift */; };
-		A792789F27568D7100AAD171 /* DB_manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792789E27568D7100AAD171 /* DB_manager.swift */; };
 		A79278A427568D8200AAD171 /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79278A327568D8200AAD171 /* Blur.swift */; };
 		A792790827568F6900AAD171 /* song2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A79278FF27568F6900AAD171 /* song2.mp3 */; };
 		A792790927568F6900AAD171 /* song1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A792790727568F6900AAD171 /* song1.mp3 */; };
+		A7DA437127612C060033F2F2 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DA437027612C060033F2F2 /* Persistance.swift */; };
+		A7DA437827612C280033F2F2 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7DA437627612C280033F2F2 /* Data.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+<<<<<<< HEAD
 		128D1C62276134F500C2130C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 128D1C58276134F500C2130C /* SQLite.xcodeproj */;
@@ -95,6 +97,8 @@
 			remoteGlobalIDString = A121AC451CA35C79005A31D1;
 			remoteInfo = "SQLite watchOS";
 		};
+=======
+>>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 		A71F512B273BEB8D0062FC9D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A71F5111273BEB8B0062FC9D /* Project object */;
@@ -118,7 +122,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+<<<<<<< HEAD
 				128D1C7E2761351E00C2130C /* SQLite.framework in Embed Frameworks */,
+=======
+>>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,10 +170,11 @@
 		A792788F27568CA900AAD171 /* PlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingView.swift; sourceTree = "<group>"; };
 		A792789427568CD000AAD171 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		A792789927568D3000AAD171 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		A792789E27568D7100AAD171 /* DB_manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB_manager.swift; sourceTree = "<group>"; };
 		A79278A327568D8200AAD171 /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 		A79278FF27568F6900AAD171 /* song2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song2.mp3; sourceTree = "<group>"; };
 		A792790727568F6900AAD171 /* song1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song1.mp3; sourceTree = "<group>"; };
+		A7DA437027612C060033F2F2 /* Persistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Persistance.swift; path = ../../../Documents/IOSspotify/IOSspotify/Persistance.swift; sourceTree = "<group>"; };
+		A7DA437727612C280033F2F2 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +182,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				128D1C87276135AC00C2130C /* SQLite in Frameworks */,
 				128D1C7D2761351D00C2130C /* SQLite.framework in Frameworks */,
+=======
+>>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,12 +258,14 @@
 		A71F5110273BEB8B0062FC9D = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				128D1C58276134F500C2130C /* SQLite.xcodeproj */,
+=======
+>>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 				A71F511B273BEB8C0062FC9D /* IOSspotify */,
 				A71F512D273BEB8D0062FC9D /* IOSspotifyTests */,
 				A71F5138273BEB8D0062FC9D /* IOSspotifyUITests */,
 				A71F511A273BEB8C0062FC9D /* Products */,
-				A79278EF27568E7E00AAD171 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -278,8 +291,9 @@
 				A71F5125273BEB8D0062FC9D /* Info.plist */,
 				A71F5122273BEB8D0062FC9D /* Preview Content */,
 				A792789927568D3000AAD171 /* Data.swift */,
-				A792789E27568D7100AAD171 /* DB_manager.swift */,
+				A7DA437027612C060033F2F2 /* Persistance.swift */,
 				A79278A327568D8200AAD171 /* Blur.swift */,
+				A7DA437627612C280033F2F2 /* Data.xcdatamodeld */,
 			);
 			path = IOSspotify;
 			sourceTree = "<group>";
@@ -352,6 +366,7 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		A79278EF27568E7E00AAD171 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +375,8 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 		A79278F527568EB300AAD171 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,12 +479,15 @@
 			mainGroup = A71F5110273BEB8B0062FC9D;
 			productRefGroup = A71F511A273BEB8C0062FC9D /* Products */;
 			projectDirPath = "";
+<<<<<<< HEAD
 			projectReferences = (
 				{
 					ProductGroup = 128D1C59276134F500C2130C /* Products */;
 					ProjectRef = 128D1C58276134F500C2130C /* SQLite.xcodeproj */;
 				},
 			);
+=======
+>>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 			projectRoot = "";
 			targets = (
 				A71F5118273BEB8C0062FC9D /* IOSspotify */,
@@ -477,6 +497,7 @@
 		};
 /* End PBXProject section */
 
+<<<<<<< HEAD
 /* Begin PBXReferenceProxy section */
 		128D1C63276134F500C2130C /* SQLite.framework */ = {
 			isa = PBXReferenceProxy;
@@ -529,6 +550,8 @@
 		};
 /* End PBXReferenceProxy section */
 
+=======
+>>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 /* Begin PBXResourcesBuildPhase section */
 		A71F5117273BEB8C0062FC9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -566,6 +589,7 @@
 				A792789527568CD000AAD171 /* SignInView.swift in Sources */,
 				A792788627568C5000AAD171 /* LogInView.swift in Sources */,
 				A792787C27568BDA00AAD171 /* Album.swift in Sources */,
+				A7DA437827612C280033F2F2 /* Data.xcdatamodeld in Sources */,
 				122C88DA2756AE5C007092FD /* MiniPlayer.swift in Sources */,
 				A792787727568BCB00AAD171 /* Song.swift in Sources */,
 				A792785427568A9E00AAD171 /* ViewModelMusicPlayer.swift in Sources */,
@@ -582,10 +606,14 @@
 				A792789027568CA900AAD171 /* PlayingView.swift in Sources */,
 				A7502284275F7CBB00DFD3A1 /* SeachView.swift in Sources */,
 				077883402760FC700060294D /* SongCardView.swift in Sources */,
+<<<<<<< HEAD
 				128D1C512761333B00C2130C /* ModelMusicPlayer2.swift in Sources */,
 				A792789F27568D7100AAD171 /* DB_manager.swift in Sources */,
+=======
+>>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 				A71F517A273C06900062FC9D /* ModelMusicPlayer.swift in Sources */,
 				A792789A27568D3000AAD171 /* Data.swift in Sources */,
+				A7DA437127612C060033F2F2 /* Persistance.swift in Sources */,
 				A79278A427568D8200AAD171 /* Blur.swift in Sources */,
 				A792788127568C2A00AAD171 /* LogInSignInView.swift in Sources */,
 				A792785F27568B7400AAD171 /* User.swift in Sources */,
@@ -903,12 +931,27 @@
 		};
 /* End XCConfigurationList section */
 
+<<<<<<< HEAD
 /* Begin XCSwiftPackageProductDependency section */
 		128D1C86276135AC00C2130C /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
+=======
+/* Begin XCVersionGroup section */
+		A7DA437627612C280033F2F2 /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A7DA437727612C280033F2F2 /* Data.xcdatamodel */,
+			);
+			currentVersion = A7DA437727612C280033F2F2 /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+>>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 	};
 	rootObject = A71F5111273BEB8B0062FC9D /* Project object */;
 }
