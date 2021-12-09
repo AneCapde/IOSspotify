@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,10 +11,6 @@
 		077883502761146E0060294D /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778834F2761146E0060294D /* ContentView2.swift */; };
 		122C88CB2756A8AA007092FD /* TabBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C88CA2756A8AA007092FD /* TabBarMenu.swift */; };
 		122C88DA2756AE5C007092FD /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C88D92756AE5C007092FD /* MiniPlayer.swift */; };
-		128D1C512761333B00C2130C /* ModelMusicPlayer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128D1C502761333B00C2130C /* ModelMusicPlayer2.swift */; };
-		128D1C7D2761351D00C2130C /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D1C63276134F500C2130C /* SQLite.framework */; };
-		128D1C7E2761351E00C2130C /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 128D1C63276134F500C2130C /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		128D1C87276135AC00C2130C /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 128D1C86276135AC00C2130C /* SQLite */; };
 		A71F511D273BEB8C0062FC9D /* IOSspotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F511C273BEB8C0062FC9D /* IOSspotifyApp.swift */; };
 		A71F511F273BEB8C0062FC9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F511E273BEB8C0062FC9D /* ContentView.swift */; };
 		A71F5121273BEB8D0062FC9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71F5120273BEB8D0062FC9D /* Assets.xcassets */; };
@@ -27,8 +23,10 @@
 		A71F5190273C07750062FC9D /* PlaylistCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F518F273C07750062FC9D /* PlaylistCardView.swift */; };
 		A71F5195273C079B0062FC9D /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F5194273C079B0062FC9D /* PlaylistView.swift */; };
 		A71F519A273C07CE0062FC9D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F5199273C07CE0062FC9D /* RoundedCorner.swift */; };
+		A731FA342762318B0044D381 /* ViewModelMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731FA332762318B0044D381 /* ViewModelMusicPlayer.swift */; };
+		A731FA38276231FF0044D381 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731FA37276231FF0044D381 /* Persistance.swift */; };
+		A731FA3C276232930044D381 /* ModelMusicPlayer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A731FA3B276232930044D381 /* ModelMusicPlayer2.swift */; };
 		A7502284275F7CBB00DFD3A1 /* SeachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7502283275F7CBB00DFD3A1 /* SeachView.swift */; };
-		A792785427568A9E00AAD171 /* ViewModelMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792785327568A9E00AAD171 /* ViewModelMusicPlayer.swift */; };
 		A792785A27568B4E00AAD171 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792785927568B4E00AAD171 /* UserViewModel.swift */; };
 		A792785F27568B7400AAD171 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792785E27568B7400AAD171 /* User.swift */; };
 		A792787727568BCB00AAD171 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792787627568BCB00AAD171 /* Song.swift */; };
@@ -42,63 +40,10 @@
 		A79278A427568D8200AAD171 /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79278A327568D8200AAD171 /* Blur.swift */; };
 		A792790827568F6900AAD171 /* song2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A79278FF27568F6900AAD171 /* song2.mp3 */; };
 		A792790927568F6900AAD171 /* song1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A792790727568F6900AAD171 /* song1.mp3 */; };
-		A7DA437127612C060033F2F2 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DA437027612C060033F2F2 /* Persistance.swift */; };
 		A7DA437827612C280033F2F2 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7DA437627612C280033F2F2 /* Data.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-<<<<<<< HEAD
-		128D1C62276134F500C2130C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 128D1C58276134F500C2130C /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
-			remoteInfo = "SQLite iOS";
-		};
-		128D1C64276134F500C2130C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 128D1C58276134F500C2130C /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
-			remoteInfo = "SQLiteTests iOS";
-		};
-		128D1C66276134F500C2130C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 128D1C58276134F500C2130C /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
-			remoteInfo = "SQLite Mac";
-		};
-		128D1C68276134F500C2130C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 128D1C58276134F500C2130C /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
-			remoteInfo = "SQLiteTests Mac";
-		};
-		128D1C6A276134F500C2130C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 128D1C58276134F500C2130C /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
-			remoteInfo = "SQLite tvOS";
-		};
-		128D1C6C276134F500C2130C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 128D1C58276134F500C2130C /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
-			remoteInfo = "SQLiteTests tvOS";
-		};
-		128D1C6E276134F500C2130C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 128D1C58276134F500C2130C /* SQLite.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A121AC451CA35C79005A31D1;
-			remoteInfo = "SQLite watchOS";
-		};
-=======
->>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 		A71F512B273BEB8D0062FC9D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A71F5111273BEB8B0062FC9D /* Project object */;
@@ -116,16 +61,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		128D1C7F2761351E00C2130C /* Embed Frameworks */ = {
+		A750227E275F7C5700DFD3A1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-<<<<<<< HEAD
-				128D1C7E2761351E00C2130C /* SQLite.framework in Embed Frameworks */,
-=======
->>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,9 +78,6 @@
 		0778834F2761146E0060294D /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		122C88CA2756A8AA007092FD /* TabBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenu.swift; sourceTree = "<group>"; };
 		122C88D92756AE5C007092FD /* MiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
-		128D1C4527611F2E00C2130C /* SQLite.swift-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "SQLite.swift-master"; path = "../../Downloads/SQLite.swift-master"; sourceTree = "<group>"; };
-		128D1C502761333B00C2130C /* ModelMusicPlayer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMusicPlayer2.swift; sourceTree = "<group>"; };
-		128D1C58276134F500C2130C /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		A71F5119273BEB8C0062FC9D /* IOSspotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSspotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71F511C273BEB8C0062FC9D /* IOSspotifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSspotifyApp.swift; sourceTree = "<group>"; };
 		A71F511E273BEB8C0062FC9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,8 +96,10 @@
 		A71F518F273C07750062FC9D /* PlaylistCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCardView.swift; sourceTree = "<group>"; };
 		A71F5194273C079B0062FC9D /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
 		A71F5199273C07CE0062FC9D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		A731FA332762318B0044D381 /* ViewModelMusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelMusicPlayer.swift; sourceTree = "<group>"; };
+		A731FA37276231FF0044D381 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		A731FA3B276232930044D381 /* ModelMusicPlayer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMusicPlayer2.swift; sourceTree = "<group>"; };
 		A7502283275F7CBB00DFD3A1 /* SeachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachView.swift; sourceTree = "<group>"; };
-		A792785327568A9E00AAD171 /* ViewModelMusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelMusicPlayer.swift; sourceTree = "<group>"; };
 		A792785927568B4E00AAD171 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		A792785E27568B7400AAD171 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A792787627568BCB00AAD171 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
@@ -173,7 +113,6 @@
 		A79278A327568D8200AAD171 /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 		A79278FF27568F6900AAD171 /* song2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song2.mp3; sourceTree = "<group>"; };
 		A792790727568F6900AAD171 /* song1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song1.mp3; sourceTree = "<group>"; };
-		A7DA437027612C060033F2F2 /* Persistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Persistance.swift; path = ../../../Documents/IOSspotify/IOSspotify/Persistance.swift; sourceTree = "<group>"; };
 		A7DA437727612C280033F2F2 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,11 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				128D1C87276135AC00C2130C /* SQLite in Frameworks */,
-				128D1C7D2761351D00C2130C /* SQLite.framework in Frameworks */,
-=======
->>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,27 +175,9 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		128D1C59276134F500C2130C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				128D1C63276134F500C2130C /* SQLite.framework */,
-				128D1C65276134F500C2130C /* SQLiteTests iOS.xctest */,
-				128D1C67276134F500C2130C /* SQLite.framework */,
-				128D1C69276134F500C2130C /* SQLiteTests Mac.xctest */,
-				128D1C6B276134F500C2130C /* SQLite.framework */,
-				128D1C6D276134F500C2130C /* SQLiteTests tvOS.xctest */,
-				128D1C6F276134F500C2130C /* SQLite.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A71F5110273BEB8B0062FC9D = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				128D1C58276134F500C2130C /* SQLite.xcodeproj */,
-=======
->>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 				A71F511B273BEB8C0062FC9D /* IOSspotify */,
 				A71F512D273BEB8D0062FC9D /* IOSspotifyTests */,
 				A71F5138273BEB8D0062FC9D /* IOSspotifyUITests */,
@@ -291,9 +207,9 @@
 				A71F5125273BEB8D0062FC9D /* Info.plist */,
 				A71F5122273BEB8D0062FC9D /* Preview Content */,
 				A792789927568D3000AAD171 /* Data.swift */,
-				A7DA437027612C060033F2F2 /* Persistance.swift */,
 				A79278A327568D8200AAD171 /* Blur.swift */,
 				A7DA437627612C280033F2F2 /* Data.xcdatamodeld */,
+				A731FA37276231FF0044D381 /* Persistance.swift */,
 			);
 			path = IOSspotify;
 			sourceTree = "<group>";
@@ -330,7 +246,7 @@
 				A792785E27568B7400AAD171 /* User.swift */,
 				A792787627568BCB00AAD171 /* Song.swift */,
 				A792787B27568BDA00AAD171 /* Album.swift */,
-				128D1C502761333B00C2130C /* ModelMusicPlayer2.swift */,
+				A731FA3B276232930044D381 /* ModelMusicPlayer2.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -345,12 +261,12 @@
 				A71F511E273BEB8C0062FC9D /* ContentView.swift */,
 				A792788027568C2A00AAD171 /* LogInSignInView.swift */,
 				A792788527568C5000AAD171 /* LogInView.swift */,
-				A792789427568CD000AAD171 /* SignInView.swift */,
 				A792788A27568C7F00AAD171 /* MenuView.swift */,
 				A792788F27568CA900AAD171 /* PlayingView.swift */,
 				122C88D92756AE5C007092FD /* MiniPlayer.swift */,
 				122C88CA2756A8AA007092FD /* TabBarMenu.swift */,
 				A7502283275F7CBB00DFD3A1 /* SeachView.swift */,
+				A792789427568CD000AAD171 /* SignInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,23 +276,12 @@
 			children = (
 				0778834F2761146E0060294D /* ContentView2.swift */,
 				A71F5179273C06900062FC9D /* ModelMusicPlayer.swift */,
-				A792785327568A9E00AAD171 /* ViewModelMusicPlayer.swift */,
 				A792785927568B4E00AAD171 /* UserViewModel.swift */,
+				A731FA332762318B0044D381 /* ViewModelMusicPlayer.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		A79278EF27568E7E00AAD171 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				128D1C4527611F2E00C2130C /* SQLite.swift-master */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-=======
->>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 		A79278F527568EB300AAD171 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,16 +301,13 @@
 				A71F5115273BEB8C0062FC9D /* Sources */,
 				A71F5116273BEB8C0062FC9D /* Frameworks */,
 				A71F5117273BEB8C0062FC9D /* Resources */,
-				128D1C7F2761351E00C2130C /* Embed Frameworks */,
+				A750227E275F7C5700DFD3A1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = IOSspotify;
-			packageProductDependencies = (
-				128D1C86276135AC00C2130C /* SQLite */,
-			);
 			productName = IOSspotify;
 			productReference = A71F5119273BEB8C0062FC9D /* IOSspotify.app */;
 			productType = "com.apple.product-type.application";
@@ -479,15 +381,6 @@
 			mainGroup = A71F5110273BEB8B0062FC9D;
 			productRefGroup = A71F511A273BEB8C0062FC9D /* Products */;
 			projectDirPath = "";
-<<<<<<< HEAD
-			projectReferences = (
-				{
-					ProductGroup = 128D1C59276134F500C2130C /* Products */;
-					ProjectRef = 128D1C58276134F500C2130C /* SQLite.xcodeproj */;
-				},
-			);
-=======
->>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 			projectRoot = "";
 			targets = (
 				A71F5118273BEB8C0062FC9D /* IOSspotify */,
@@ -497,61 +390,6 @@
 		};
 /* End PBXProject section */
 
-<<<<<<< HEAD
-/* Begin PBXReferenceProxy section */
-		128D1C63276134F500C2130C /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = 128D1C62276134F500C2130C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		128D1C65276134F500C2130C /* SQLiteTests iOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests iOS.xctest";
-			remoteRef = 128D1C64276134F500C2130C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		128D1C67276134F500C2130C /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = 128D1C66276134F500C2130C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		128D1C69276134F500C2130C /* SQLiteTests Mac.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests Mac.xctest";
-			remoteRef = 128D1C68276134F500C2130C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		128D1C6B276134F500C2130C /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = 128D1C6A276134F500C2130C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		128D1C6D276134F500C2130C /* SQLiteTests tvOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SQLiteTests tvOS.xctest";
-			remoteRef = 128D1C6C276134F500C2130C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		128D1C6F276134F500C2130C /* SQLite.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SQLite.framework;
-			remoteRef = 128D1C6E276134F500C2130C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
-=======
->>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 /* Begin PBXResourcesBuildPhase section */
 		A71F5117273BEB8C0062FC9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -591,8 +429,8 @@
 				A792787C27568BDA00AAD171 /* Album.swift in Sources */,
 				A7DA437827612C280033F2F2 /* Data.xcdatamodeld in Sources */,
 				122C88DA2756AE5C007092FD /* MiniPlayer.swift in Sources */,
+				A731FA342762318B0044D381 /* ViewModelMusicPlayer.swift in Sources */,
 				A792787727568BCB00AAD171 /* Song.swift in Sources */,
-				A792785427568A9E00AAD171 /* ViewModelMusicPlayer.swift in Sources */,
 				A71F519A273C07CE0062FC9D /* RoundedCorner.swift in Sources */,
 				A71F511F273BEB8C0062FC9D /* ContentView.swift in Sources */,
 				A792785A27568B4E00AAD171 /* UserViewModel.swift in Sources */,
@@ -600,20 +438,16 @@
 				122C88CB2756A8AA007092FD /* TabBarMenu.swift in Sources */,
 				A71F5183273C06F10062FC9D /* BlurView.swift in Sources */,
 				A792788B27568C7F00AAD171 /* MenuView.swift in Sources */,
+				A731FA3C276232930044D381 /* ModelMusicPlayer2.swift in Sources */,
 				A71F5190273C07750062FC9D /* PlaylistCardView.swift in Sources */,
 				A71F511D273BEB8C0062FC9D /* IOSspotifyApp.swift in Sources */,
 				A71F5188273C07400062FC9D /* LibraryView.swift in Sources */,
 				A792789027568CA900AAD171 /* PlayingView.swift in Sources */,
 				A7502284275F7CBB00DFD3A1 /* SeachView.swift in Sources */,
 				077883402760FC700060294D /* SongCardView.swift in Sources */,
-<<<<<<< HEAD
-				128D1C512761333B00C2130C /* ModelMusicPlayer2.swift in Sources */,
-				A792789F27568D7100AAD171 /* DB_manager.swift in Sources */,
-=======
->>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 				A71F517A273C06900062FC9D /* ModelMusicPlayer.swift in Sources */,
 				A792789A27568D3000AAD171 /* Data.swift in Sources */,
-				A7DA437127612C060033F2F2 /* Persistance.swift in Sources */,
+				A731FA38276231FF0044D381 /* Persistance.swift in Sources */,
 				A79278A427568D8200AAD171 /* Blur.swift in Sources */,
 				A792788127568C2A00AAD171 /* LogInSignInView.swift in Sources */,
 				A792785F27568B7400AAD171 /* User.swift in Sources */,
@@ -931,14 +765,6 @@
 		};
 /* End XCConfigurationList section */
 
-<<<<<<< HEAD
-/* Begin XCSwiftPackageProductDependency section */
-		128D1C86276135AC00C2130C /* SQLite */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SQLite;
-		};
-/* End XCSwiftPackageProductDependency section */
-=======
 /* Begin XCVersionGroup section */
 		A7DA437627612C280033F2F2 /* Data.xcdatamodeld */ = {
 			isa = XCVersionGroup;
@@ -951,7 +777,6 @@
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
->>>>>>> 3a0b53bbbdcb7eb3c3c8e8f480d1c2d64ab6fec5
 	};
 	rootObject = A71F5111273BEB8B0062FC9D /* Project object */;
 }
