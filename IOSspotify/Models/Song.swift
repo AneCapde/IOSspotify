@@ -12,4 +12,7 @@ struct Song : Hashable {
     var name: String = ""
     var time: String = ""
     var file: String = ""
+
 }
+
+

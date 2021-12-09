@@ -10,7 +10,6 @@ struct LogInView: View {
     @State private var alertisPresented = false
     @State private var credentials = false
    
-    @ObservedObject var userViewModel: UserViewModel
     @ObservedObject var viewModel : ViewModelMusicPlayer
     
     let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
@@ -19,13 +18,13 @@ struct LogInView: View {
     var body: some View {
         VStack {
             LoginText()
-            TextField("Username", text: $userViewModel.userModel.name)
+            TextField("Username", text: $viewModel.userModel.name)
                 .padding()
                 .background(lightGreyColor)
                 .cornerRadius(5.0)
                 .padding()
             
-            SecureField("Password", text: $userViewModel.userModel.password)
+            SecureField("Password", text: $viewModel.userModel.password)
                 .padding()
                 .background(lightGreyColor)
                 .cornerRadius(5.0)
@@ -48,10 +47,10 @@ struct LogInView: View {
         }
     }
     func logIn() -> Bool{
-        if (!userViewModel.logingIn()){
+        if (!viewModel.logingIn()){
             alertisPresented = true
         }
-        return userViewModel.logingIn()
+        return viewModel.logingIn()
     }
 }
 
@@ -68,6 +67,6 @@ struct LoginText: View {
 }
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInView(userViewModel: UserViewModel(), viewModel: ViewModelMusicPlayer())
+        LogInView(viewModel: ViewModelMusicPlayer())
     }
 }

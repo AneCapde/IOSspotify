@@ -8,6 +8,7 @@ import SwiftUI
 import AVFoundation
 
 struct PlayingView: View {
+    
     @State var album : Album
     @State var song : Song
     @State var isPlaying : Bool = false

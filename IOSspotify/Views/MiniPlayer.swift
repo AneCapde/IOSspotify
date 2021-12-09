@@ -17,14 +17,18 @@ struct MiniPlayer: View {
     @Binding var expand: Bool
     var height = UIScreen.main.bounds.height / 3
     @StateObject var data = Data()
+    var lastListenedSong = UserDefaults.standard.string(forKey: "lastSong")
+    
     @ObservedObject var viewModel : ViewModelMusicPlayer
  
+   
+
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
     
     // TODO
     // get phone volume value
     @State var volume: CGFloat = 0.5
-    
+   
     @State var offset:CGFloat = 0
     
     var body: some View {
@@ -42,7 +46,8 @@ struct MiniPlayer: View {
 
                 if expand{Spacer(minLength: 0)}
                 
-                Image(viewModel.getAlbumImageName())
+                //FIGURE IT OUT USERDEFAULTS 
+                Image(data.getAlbumImageName(songName: lastListenedSong ?? "cover1"))
                     .resizable()
                     .aspectRatio(contentMode:   .fill)
                     .frame(width: expand ? height : 55 , height: expand ? height :55)
@@ -144,24 +149,33 @@ struct MiniPlayer: View {
 struct ButtonsView: View{
     
     @ObservedObject var viewModel : ViewModelMusicPlayer
-   
-
+    
+    @AppStorage("lastSong", store: .standard) public var lastListenedSong: String = "No set"
+    
     var body: some View{
         Spacer()
-        Button(action: viewModel.previous, label: {
+        Button(action: {
+            viewModel.previous();            lastListenedSong = viewModel.getSongName();
+                viewModel.updateLastListenedSong(song: lastListenedSong)        }, label: {
                 Image(systemName:"backward.fill")
                     .font(.title2)
                     .foregroundColor(.primary)
-            
-        })
+            }
+        
+        
+        )
         Spacer()
-        Button(action: viewModel.playPause, label: {
+        Button(action: { viewModel.playPause();            lastListenedSong = viewModel.getSongName(); viewModel.updateLastListenedSong(song: lastListenedSong)
+            
+        },
+        label: {
             Image(systemName:  viewModel.playingState())
                     .font(.title2)
                     .foregroundColor(.primary)
         })
         Spacer()
-        Button(action: viewModel.next, label: {
+        Button(action: {viewModel.next();            lastListenedSong = viewModel.getSongName();
+                viewModel.updateLastListenedSong(song: lastListenedSong)        }, label: {
                 Image(systemName:"forward.fill")
                     .font(.title2)
                     .foregroundColor(.primary)

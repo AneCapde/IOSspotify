@@ -33,5 +33,41 @@ class Data: ObservableObject {
                                             Song(id: 7, name: "song1", time: "2:36", file: "song2"),
                                             Song(id: 8, name: "Last Friday Night", time:"2:36", file: "song2"),
                                             Song(id: 9, name: "song2", time: "2:36", file: "song2")])]
+        
+    func getAllSongsfromAlbum(albumName: String) -> [Song] {
+        albums.first {  album  in
+            album.name == albumName
+            
+        }?.songs ?? []
+    }
+    
+    func getSong(songName: String) -> Song?{
+        let song =
+            songs.first{ song in
+            song.name == songName
+        }
+        return song ?? nil
+    }
+    
+    
+    func getAlbum(songName: String) -> Album?{
+         let album = albums.first{
+            $0.songs.contains(getSong(songName: songName)!)
+        }
+        return album!
+    }
+    
+    func getAlbumImageName(songName: String) -> String{
+        return getAlbum(songName: songName)!.image
+    }
+    
+    
+    
+    
+    
+   
+    
+    
+  
     
 }

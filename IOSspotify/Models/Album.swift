@@ -11,5 +11,6 @@ struct Album: Hashable {
     var name: String = ""
     var image: String = ""
     var songs : [Song] = []
-    
+      
 }
+    

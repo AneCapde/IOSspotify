@@ -8,7 +8,6 @@ import SwiftUI
 
 struct SignInView: View {
     
-    @ObservedObject var userViewModel: UserViewModel
     @ObservedObject var viewModel : ViewModelMusicPlayer
    
     @StateObject var data = Data()
@@ -18,19 +17,19 @@ struct SignInView: View {
     var body: some View {
         VStack {
             SignText()
-            TextField("Username", text: $userViewModel.userModel.name)
+            TextField("Username", text: $viewModel.userModel.name)
                 .padding()
                 .background(lightGreyColor)
                 .cornerRadius(5.0)
                 .padding()
             
-            TextField("Email", text: $userViewModel.userModel.email)
+            TextField("Email", text: $viewModel.userModel.email)
                 .padding()
                 .background(lightGreyColor)
                 .cornerRadius(5.0)
                 .padding()
             
-            SecureField("Password", text: $userViewModel.userModel.password)
+            SecureField("Password", text: $viewModel.userModel.password)
                 .padding()
                 .background(lightGreyColor)
                 .cornerRadius(5.0)
@@ -45,7 +44,7 @@ struct SignInView: View {
                 .background(Color.purple)
                 .cornerRadius(1.0)
                 .simultaneousGesture(TapGesture().onEnded{
-                                userViewModel.newUser()
+                                viewModel.newUser()
                                 })
         }
     }
@@ -64,6 +63,6 @@ struct SignText: View {
 }
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView(userViewModel: UserViewModel(), viewModel: ViewModelMusicPlayer())
+        SignInView(viewModel: ViewModelMusicPlayer())
     }
 }

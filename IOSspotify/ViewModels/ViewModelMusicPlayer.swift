@@ -11,6 +11,21 @@ import AVFoundation
 class ViewModelMusicPlayer: ObservableObject {
    
     @Published var model = ModelMusicPlayer2()
+    @Published var userModel = User()
+    
+   
+    func logingIn() ->Bool{
+        userModel.logingIn()
+    }
+    
+    func newUser(){
+        userModel.newUser()
+    }
+    
+    func updateLastListenedSong(song: String){
+        userModel.lastListenedSong = song
+    }
+    
     
     func playingState() -> String  {
         if model.isPlaying{
@@ -22,6 +37,10 @@ class ViewModelMusicPlayer: ObservableObject {
     
     func getSongName()->String{
         model.currentSong.name
+    }
+    
+    func getSong() -> Song{
+        model.currentSong
     }
     
     func getAlbumImageName()->String{
