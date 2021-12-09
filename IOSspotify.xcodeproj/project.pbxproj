@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0722FFA02762413700367103 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0722FF9F2762413700367103 /* File.swift */; };
 		077883402760FC700060294D /* SongCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778833F2760FC700060294D /* SongCardView.swift */; };
 		077883502761146E0060294D /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778834F2761146E0060294D /* ContentView2.swift */; };
 		122C88CB2756A8AA007092FD /* TabBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C88CA2756A8AA007092FD /* TabBarMenu.swift */; };
@@ -74,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0722FF9F2762413700367103 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0778833F2760FC700060294D /* SongCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCardView.swift; sourceTree = "<group>"; };
 		0778834F2761146E0060294D /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		122C88CA2756A8AA007092FD /* TabBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenu.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				A71F5179273C06900062FC9D /* ModelMusicPlayer.swift */,
 				A792785927568B4E00AAD171 /* UserViewModel.swift */,
 				A731FA332762318B0044D381 /* ViewModelMusicPlayer.swift */,
+				0722FF9F2762413700367103 /* File.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				A792788627568C5000AAD171 /* LogInView.swift in Sources */,
 				A792787C27568BDA00AAD171 /* Album.swift in Sources */,
 				A7DA437827612C280033F2F2 /* Data.xcdatamodeld in Sources */,
+				0722FFA02762413700367103 /* File.swift in Sources */,
 				122C88DA2756AE5C007092FD /* MiniPlayer.swift in Sources */,
 				A731FA342762318B0044D381 /* ViewModelMusicPlayer.swift in Sources */,
 				A792787727568BCB00AAD171 /* Song.swift in Sources */,
