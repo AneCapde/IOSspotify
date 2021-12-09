@@ -11,13 +11,13 @@ import AVFoundation
 
 struct MiniPlayer: View {
     
-
-    
     var animation: Namespace.ID
-    @Binding var expand: Bool
     var height = UIScreen.main.bounds.height / 3
+    
     @StateObject var data = Data()
     @ObservedObject var viewModel : ViewModelMusicPlayer
+    
+    
  
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
     
@@ -33,31 +33,32 @@ struct MiniPlayer: View {
             
             Capsule()
                 .fill(Color.gray)
-                .frame(width: expand ? 60 : 0, height: expand ? 4 : 0)
-                .opacity(expand ? 1 : 0)
-                .padding(.top,expand ? safeArea?.top : 0)
-                .padding(.vertical, expand ? 30 : 0)
+                .frame(width: viewModel.expand() ? 60 : 0, height: viewModel.expand() ? 4 : 0)
+                .opacity(viewModel.expand() ? 1 : 0)
+                .padding(.top,viewModel.expand() ? safeArea?.top : 0)
+                .padding(.vertical, viewModel.expand() ? 30 : 0)
             
             HStack(spacing:15){
 
-                if expand{Spacer(minLength: 0)}
+                if viewModel.expand(){Spacer(minLength: 0)}
                 
                 Image(viewModel.getAlbumImageName())
                     .resizable()
                     .aspectRatio(contentMode:   .fill)
-                    .frame(width: expand ? height : 55 , height: expand ? height :55)
+                    .frame(width: viewModel.expand() ? height : 55 , height: viewModel.expand() ? height :55)
                     .cornerRadius(15)
                 
-                if !expand{
+                if !viewModel.expand(){
                     Text(viewModel.getSongName())
-                        .font(  .title2)
-                        .fontWeight(    .bold)
+                        .font(  .title3)
+                        .fontWeight(.thin)
                         .matchedGeometryEffect(id: "Label", in: animation)
+                        
                 }
             
                 Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
         
-                if !expand{
+                if !viewModel.expand(){
                     ButtonsView(viewModel: viewModel)
                 }
             }
@@ -68,7 +69,7 @@ struct MiniPlayer: View {
                 Spacer(minLength: 0)
 
                 HStack{
-                    if expand {
+                    if viewModel.expand() {
                     Text(viewModel.getSongName())
                         .font(.title2)
                         .foregroundColor(.primary)
@@ -97,11 +98,11 @@ struct MiniPlayer: View {
                 
                 
             }
-            .frame(height: expand ? nil : 0 )
-            .opacity(expand ? 1 : 0)
+            .frame(height: viewModel.expand() ? nil : 0 )
+            .opacity(viewModel.expand() ? 1 : 0)
         }
         // to full screen
-        .frame(maxHeight: expand ? .infinity:  80)
+        .frame(maxHeight: viewModel.expand() ? .infinity:  80)
         // DEVIDER FOR SEPARATING MINIP AND TBAR
         .background(
             
@@ -112,11 +113,11 @@ struct MiniPlayer: View {
                 Divider()
             }
             .onTapGesture {
-                withAnimation(.spring()){expand = true}
+                withAnimation(.spring()){viewModel.changeStateOdExpand(true)}
             }
         )
-        .cornerRadius(expand ? 20: 0)
-        .offset( y: expand ? 0 : -48)
+        .cornerRadius(viewModel.expand() ? 20: 0)
+        .offset( y: viewModel.expand() ? 0 : -48)
         .offset(y: offset)
         .gesture(DragGesture().onEnded(onEnd(value: )).onChanged(onChange(value: )))
         .ignoresSafeArea()
@@ -124,7 +125,7 @@ struct MiniPlayer: View {
         
     func onChange(value: DragGesture.Value){
         //works only when expanded
-        if value.translation.height > 0 && expand{
+        if value.translation.height > 0 && viewModel.expand(){
             offset=value.translation.height
         }
     }
@@ -133,7 +134,7 @@ struct MiniPlayer: View {
         withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.95,blendDuration: 0.95 )){
             // if val > height/3 then close view
             if value.translation.height > height {
-                expand=false
+                viewModel.changeStateOdExpand(false)
             }
             offset=0
         }

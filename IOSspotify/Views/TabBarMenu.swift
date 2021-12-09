@@ -37,7 +37,7 @@ struct TabBarMenu: View {
                                     }.tag(2)
                             }
                     
-                    MiniPlayer(animation: animation, expand: $expand, viewModel: viewModel)
+                    MiniPlayer(animation: animation, viewModel: viewModel)
                     })
         
     }

@@ -8,6 +8,7 @@ import SwiftUI
 
 struct LogInSigInView: View {
     
+    
     @ObservedObject var viewModel : ViewModelMusicPlayer
     @StateObject var userViewModel = UserViewModel()
     var body: some View {
@@ -22,7 +23,7 @@ struct LogInSigInView: View {
                     .padding()
                     .frame(width: 220, height: 60)
                     .background(Color.purple)
-                    .cornerRadius(1.0)
+                    .cornerRadius(15.0)
                     
                 NavigationLink(destination: SignInView(userViewModel: userViewModel, viewModel: viewModel)) {
                 Text("SIGN IN")}
@@ -31,7 +32,7 @@ struct LogInSigInView: View {
                     .padding()
                     .frame(width: 220, height: 60)
                     .background(Color.purple)
-                    .cornerRadius(1.0)
+                    .cornerRadius(15.0)
                 
                 
             }

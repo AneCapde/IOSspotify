@@ -12,6 +12,7 @@
 		077883502761146E0060294D /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778834F2761146E0060294D /* ContentView2.swift */; };
 		122C88CB2756A8AA007092FD /* TabBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C88CA2756A8AA007092FD /* TabBarMenu.swift */; };
 		122C88DA2756AE5C007092FD /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C88D92756AE5C007092FD /* MiniPlayer.swift */; };
+		126284B22762710400A49FF8 /* MuiscSliderControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126284B12762710400A49FF8 /* MuiscSliderControler.swift */; };
 		A71F511D273BEB8C0062FC9D /* IOSspotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F511C273BEB8C0062FC9D /* IOSspotifyApp.swift */; };
 		A71F511F273BEB8C0062FC9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F511E273BEB8C0062FC9D /* ContentView.swift */; };
 		A71F5121273BEB8D0062FC9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71F5120273BEB8D0062FC9D /* Assets.xcassets */; };
@@ -35,7 +36,6 @@
 		A792788127568C2A00AAD171 /* LogInSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792788027568C2A00AAD171 /* LogInSignInView.swift */; };
 		A792788627568C5000AAD171 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792788527568C5000AAD171 /* LogInView.swift */; };
 		A792788B27568C7F00AAD171 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792788A27568C7F00AAD171 /* MenuView.swift */; };
-		A792789027568CA900AAD171 /* PlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792788F27568CA900AAD171 /* PlayingView.swift */; };
 		A792789527568CD000AAD171 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792789427568CD000AAD171 /* SignInView.swift */; };
 		A792789A27568D3000AAD171 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792789927568D3000AAD171 /* Data.swift */; };
 		A79278A427568D8200AAD171 /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79278A327568D8200AAD171 /* Blur.swift */; };
@@ -80,6 +80,7 @@
 		0778834F2761146E0060294D /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		122C88CA2756A8AA007092FD /* TabBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenu.swift; sourceTree = "<group>"; };
 		122C88D92756AE5C007092FD /* MiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
+		126284B12762710400A49FF8 /* MuiscSliderControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuiscSliderControler.swift; sourceTree = "<group>"; usesTabs = 0; };
 		A71F5119273BEB8C0062FC9D /* IOSspotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSspotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71F511C273BEB8C0062FC9D /* IOSspotifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSspotifyApp.swift; sourceTree = "<group>"; };
 		A71F511E273BEB8C0062FC9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,7 +110,6 @@
 		A792788027568C2A00AAD171 /* LogInSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInSignInView.swift; sourceTree = "<group>"; };
 		A792788527568C5000AAD171 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		A792788A27568C7F00AAD171 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		A792788F27568CA900AAD171 /* PlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingView.swift; sourceTree = "<group>"; };
 		A792789427568CD000AAD171 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		A792789927568D3000AAD171 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		A79278A327568D8200AAD171 /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				0778833F2760FC700060294D /* SongCardView.swift */,
+				126284B12762710400A49FF8 /* MuiscSliderControler.swift */,
 			);
 			path = Song;
 			sourceTree = "<group>";
@@ -264,7 +265,6 @@
 				A792788027568C2A00AAD171 /* LogInSignInView.swift */,
 				A792788527568C5000AAD171 /* LogInView.swift */,
 				A792788A27568C7F00AAD171 /* MenuView.swift */,
-				A792788F27568CA900AAD171 /* PlayingView.swift */,
 				122C88D92756AE5C007092FD /* MiniPlayer.swift */,
 				122C88CA2756A8AA007092FD /* TabBarMenu.swift */,
 				A7502283275F7CBB00DFD3A1 /* SeachView.swift */,
@@ -446,13 +446,13 @@
 				A71F5190273C07750062FC9D /* PlaylistCardView.swift in Sources */,
 				A71F511D273BEB8C0062FC9D /* IOSspotifyApp.swift in Sources */,
 				A71F5188273C07400062FC9D /* LibraryView.swift in Sources */,
-				A792789027568CA900AAD171 /* PlayingView.swift in Sources */,
 				A7502284275F7CBB00DFD3A1 /* SeachView.swift in Sources */,
 				077883402760FC700060294D /* SongCardView.swift in Sources */,
 				A71F517A273C06900062FC9D /* ModelMusicPlayer.swift in Sources */,
 				A792789A27568D3000AAD171 /* Data.swift in Sources */,
 				A731FA38276231FF0044D381 /* Persistance.swift in Sources */,
 				A79278A427568D8200AAD171 /* Blur.swift in Sources */,
+				126284B22762710400A49FF8 /* MuiscSliderControler.swift in Sources */,
 				A792788127568C2A00AAD171 /* LogInSignInView.swift in Sources */,
 				A792785F27568B7400AAD171 /* User.swift in Sources */,
 			);

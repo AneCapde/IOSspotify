@@ -19,6 +19,13 @@ class ViewModelMusicPlayer: ObservableObject {
             return "pause.fill"
         }
     }
+    func changeStateOdExpand(_ expand: Bool){
+        model.expandMiniMusicPlayer=expand
+    }
+    
+    func expand()-> Bool{
+        model.expandMiniMusicPlayer
+    }
     
     func getSongName()->String{
         model.currentSong.name

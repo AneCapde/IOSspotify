@@ -43,7 +43,7 @@ struct SignInView: View {
                 .padding()
                 .frame(width: 220, height: 60)
                 .background(Color.purple)
-                .cornerRadius(1.0)
+                .cornerRadius(15.0)
                 .simultaneousGesture(TapGesture().onEnded{
                                 userViewModel.newUser()
                                 })

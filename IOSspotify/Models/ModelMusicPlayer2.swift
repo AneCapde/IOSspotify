@@ -16,7 +16,14 @@ struct ModelMusicPlayer2{
     var currentSong = Song()
     var isPlaying : Bool = false
     var player = AVPlayer()
+    var expandMiniMusicPlayer = false
+   
     
+    
+    
+    mutating func updateVolume(){
+        
+    }
     
             mutating func playSong(){
                 let urlpath     = Bundle.main.path(forResource: currentSong.file, ofType: "mp3")
