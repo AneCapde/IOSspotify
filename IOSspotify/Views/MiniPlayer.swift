@@ -23,7 +23,7 @@ struct MiniPlayer: View {
     
     // TODO
     // get phone volume value
-    @State var volume: CGFloat = 0.5
+    @State var time: CGFloat = 0
     
     @State var offset:CGFloat = 0
     
@@ -85,11 +85,11 @@ struct MiniPlayer: View {
                 
                 HStack(spacing: 15){
                     
-                    Image(systemName: "speaker.fill")
+                    //Image(systemName: "speaker.fill")
                     
-                    Slider(value: $volume)
+                    Slider(value: $time)
                     
-                    Image(systemName: "speaker.wave.2.fill")
+                    //Image(systemName: "speaker.wave.2.fill")
                 }.padding()
                 
                 Spacer()
@@ -137,6 +137,18 @@ struct MiniPlayer: View {
                 viewModel.changeStateOdExpand(false)
             }
             offset=0
+        }
+    }
+    func updateTimer(){
+        if (viewModel.expand() == true){
+            let currentTime: CMTime = viewModel.getPlayer().currentTime()
+            let total: CMTime? = viewModel.getPlayer().currentItem?.asset.duration
+            
+            let progress: Float = Float(CMTimeGetSeconds(currentTime))/Float(CMTimeGetSeconds(total!))
+
+            withAnimation(Animation.linear(duration:0.1)){
+                self.time = CGFloat(progress)
+            }
         }
     }
     

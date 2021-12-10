@@ -12,6 +12,10 @@ class ViewModelMusicPlayer: ObservableObject {
    
     @Published var model = ModelMusicPlayer2()
     
+    func getPlayer() -> AVPlayer{
+        model.player
+    }
+    
     func playingState() -> String  {
         if model.isPlaying{
             return "play.fill"
