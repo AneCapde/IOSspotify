@@ -25,10 +25,9 @@ struct MiniPlayer: View {
 
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
     
-    // TODO
-    // get phone volume value
+    @State var timer = Timer.publish(every: 1, on: .current, in:.default).autoconnect()
     @State var volume: CGFloat = 0.5
-   
+    @State var time: CGFloat = 0
     @State var offset:CGFloat = 0
     
     var body: some View {
@@ -90,11 +89,14 @@ struct MiniPlayer: View {
                 
                 HStack(spacing: 15){
                     
-                    Image(systemName: "speaker.fill")
+                    //Image(systemName: "speaker.fill")
                     
-                    Slider(value: $volume)
+                    Slider(value: $time)
+                        .onReceive(timer, perform: { _ in
+                            self.updateTimer()
+                        })
                     
-                    Image(systemName: "speaker.wave.2.fill")
+                    //Image(systemName: "speaker.wave.2.fill")
                 }.padding()
                 
                 Spacer()
@@ -118,7 +120,7 @@ struct MiniPlayer: View {
                 Divider()
             }
             .onTapGesture {
-                withAnimation(.spring()){viewModel.changeStateOdExpand(true)}
+                withAnimation(.spring()){viewModel.changeStateOdExpand(expand: true)}
             }
         )
         .cornerRadius(viewModel.expand() ? 20: 0)
@@ -139,9 +141,21 @@ struct MiniPlayer: View {
         withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.95,blendDuration: 0.95 )){
             // if val > height/3 then close view
             if value.translation.height > height {
-                viewModel.changeStateOdExpand(false)
+                viewModel.changeStateOdExpand(expand: false)
             }
             offset=0
+        }
+    }
+    func updateTimer(){
+        if (viewModel.expand() == true){
+            let currentTime: CMTime = viewModel.getPlayer().currentTime()
+            let total: CMTime? = viewModel.getPlayer().currentItem?.asset.duration
+            
+            let progress: Float = Float(CMTimeGetSeconds(currentTime))/Float(CMTimeGetSeconds(total!))
+
+            withAnimation(Animation.linear(duration:0.1)){
+                self.time = CGFloat(progress)
+            }
         }
     }
     

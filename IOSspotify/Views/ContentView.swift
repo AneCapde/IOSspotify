@@ -12,7 +12,7 @@ struct ContentView: View {
    @ObservedObject var viewModel = ViewModelMusicPlayer()
     
     var body: some View {
-        LogInSigInView(viewModel: viewModel).padding(10)
+        LogInSigInView(viewModel: viewModel)
     }
     
 }
