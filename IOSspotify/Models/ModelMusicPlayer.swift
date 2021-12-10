@@ -9,28 +9,28 @@ import MediaPlayer
 import AVFoundation
 
 
-struct ModelMusicPlayer2{
+struct ModelMusicPlayer{
     
     
     var currentAlbum = Album()
     var currentSong = Song()
     var isPlaying : Bool = false
     var player = AVPlayer()
-    
-    
-    
+    var expandMiniMusicPlayer = false
+   
+
     mutating func playSong(){
-                let urlpath     = Bundle.main.path(forResource: currentSong.file, ofType: "mp3")
-                let url =  URL(fileURLWithPath: urlpath!)
-                do {
-                    try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-                }catch{
-                    //report error
-                }
-                isPlaying=true
-                player = AVPlayer(url: url)
-                player.play()
-            }
+        let urlpath  = Bundle.main.path(forResource: currentSong.file, ofType: "mp3")
+        let url =  URL(fileURLWithPath: urlpath!)
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        }catch{
+            //report error
+        }
+        isPlaying=true
+        player = AVPlayer(url: url)
+        player.play()
+    }
     
     mutating func playPause(){
         self.isPlaying.toggle()
@@ -39,10 +39,11 @@ struct ModelMusicPlayer2{
         }else {
             player.play()
         }
-        
     }
+    
 
-    mutating func next() {
+    mutating func next() -> (Album, Song) {
+    
         if let currentIndex = currentAlbum.songs.firstIndex(of: currentSong){
             if currentIndex == currentAlbum.songs.count - 1{
 
@@ -52,9 +53,12 @@ struct ModelMusicPlayer2{
                 self.playSong()
             }
         }
+        
+        return (currentAlbum, currentSong)
+        
     }
 
-    mutating func previous() {
+    mutating func previous()  -> (Album, Song) {
         if let currentIndex = currentAlbum.songs.firstIndex(of: currentSong){
             if currentIndex == 0{
 
@@ -64,6 +68,7 @@ struct ModelMusicPlayer2{
                 self.playSong()
             }
         }
+        return (currentAlbum, currentSong)
 }
     
     

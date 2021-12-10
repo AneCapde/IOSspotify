@@ -65,15 +65,16 @@ struct SongCell: View {
         
            
             HStack{
-                ZStack{
-                    Circle()
-                        .frame(width: 50, height: 50, alignment: .center)
-                        .foregroundColor(.blue)
-                    Circle()
-                        .frame(width: 20, height: 20, alignment: .center)
-                        .foregroundColor(.white)
-                    
-                }
+              
+                Image(album.image)
+                    .resizable()
+                    .aspectRatio(contentMode:   .fill)
+                    .frame(width: 55, height: 55, alignment: .center)
+                    .aspectRatio(contentMode:   .fill)
+                    .cornerRadius(15)
+                
+           
+                
                 Text(song.name).bold()
                 Spacer()
                 Text(song.time)

@@ -10,7 +10,7 @@ import AVFoundation
 
 class ViewModelMusicPlayer: ObservableObject {
    
-    @Published var model = ModelMusicPlayer2()
+    @Published var model = ModelMusicPlayer()
     @Published var userModel = User()
     
    
@@ -23,7 +23,7 @@ class ViewModelMusicPlayer: ObservableObject {
     }
     
     func updateLastListenedSong(song: String){
-        userModel.lastListenedSong = song
+        userModel.updateLastlistenedSong()
     }
     
     
@@ -33,6 +33,13 @@ class ViewModelMusicPlayer: ObservableObject {
         }else{
             return "pause.fill"
         }
+    }
+    func changeStateOdExpand(_ expand: Bool){
+        model.expandMiniMusicPlayer=expand
+    }
+    
+    func expand()-> Bool{
+        model.expandMiniMusicPlayer
     }
     
     func getSongName()->String{
@@ -56,7 +63,8 @@ class ViewModelMusicPlayer: ObservableObject {
     }
     
     func next(){
-        model.next()
+        let (_, song) =  model.next()
+        updateLastListenedSong(song: song.name)
     }
     
     func playPause(){
@@ -68,6 +76,7 @@ class ViewModelMusicPlayer: ObservableObject {
     }
     
     func previous(){
-        model.previous()
+        let (_, song) = model.previous()
+        updateLastListenedSong(song: song.name)
     }
 }

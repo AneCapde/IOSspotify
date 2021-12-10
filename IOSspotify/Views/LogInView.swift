@@ -37,7 +37,7 @@ struct LogInView: View {
                 .padding()
                 .frame(width: 220, height: 60)
                 .background(Color.purple)
-                .cornerRadius(1.0)
+                .cornerRadius(15.0)
                 .alert(isPresented: $alertisPresented, content: {
                     Alert(title: Text("ERROR!"), message: Text("Your enter the wrong password!"), dismissButton: .default(Text("Try Again!")))
                 })
