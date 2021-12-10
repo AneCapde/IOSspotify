@@ -7,7 +7,44 @@
 
 import Foundation
 
+struct DataModel{
+    var songs = [Song()]
+    var albums = [Album()]
+    
+    
+    func getAllSongsfromAlbum(albumName: String) -> [Song] {
+        albums.first {  album  in
+            album.name == albumName
+            
+        }?.songs ?? []
+    }
+    
+    func getSong(songName: String) -> Song?{
+        let song =
+            songs.first{ song in
+            song.name == songName
+        }
+        return song ?? nil
+    }
+    
+    
+    func getAlbum(songName: String) -> Album?{
+         let album = albums.first{
+            $0.songs.contains(getSong(songName: songName)!)
+        }
+        return album!
+    }
+    
+     func getAlbumImageName(songName: String) -> String{
+        return getAlbum(songName: songName)!.image
+    }
+    
+    
+}
+
 class Data: ObservableObject {
+    
+ 
     
     @Published public var songs: [Song] = [Song(id: 0, name: "We Rock", time: "2:36", file: "song2"),
                                            Song(id: 1, name: "This is Me", time: "3:36", file: "song1"),
@@ -33,41 +70,37 @@ class Data: ObservableObject {
                                             Song(id: 7, name: "song1", time: "2:36", file: "song2"),
                                             Song(id: 8, name: "Last Friday Night", time:"2:36", file: "song2"),
                                             Song(id: 9, name: "song2", time: "2:36", file: "song2")])]
+    
+    @Published var dataModel = DataModel()
+
         
     func getAllSongsfromAlbum(albumName: String) -> [Song] {
-        albums.first {  album  in
-            album.name == albumName
-            
-        }?.songs ?? []
+        dataModel.getAllSongsfromAlbum(albumName: albumName)
+        
     }
     
-    func getSong(songName: String) -> Song?{
-        let song =
-            songs.first{ song in
-            song.name == songName
-        }
-        return song ?? nil
+     func getAllSongs() -> [Song]{
+        return songs
+    }
+    
+     func getAllAlbums() -> [Album]{
+        return albums
+    }
+    
+    
+     func getSong(songName: String) -> Song?{
+        dataModel.getSong(songName: songName)
     }
     
     
     func getAlbum(songName: String) -> Album?{
-         let album = albums.first{
-            $0.songs.contains(getSong(songName: songName)!)
-        }
-        return album!
+        dataModel.getAlbum(songName: songName)
     }
     
     func getAlbumImageName(songName: String) -> String{
-        return getAlbum(songName: songName)!.image
+        dataModel.getAlbumImageName(songName: songName)
     }
     
-    
-    
-    
-    
-   
-    
-    
-  
+
     
 }

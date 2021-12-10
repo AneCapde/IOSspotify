@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9D8EBFF7-CB7C-4744-84CE-D649D774B385"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7C02BF0-BDA2-4C04-B79C-2FA7445BF22D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSspotify/ViewModels/ViewModelMusicPlayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

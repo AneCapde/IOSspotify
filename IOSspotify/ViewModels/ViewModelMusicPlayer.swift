@@ -6,14 +6,20 @@
 import Foundation
 import MediaPlayer
 import AVFoundation
-
+import SwiftUI
 
 class ViewModelMusicPlayer: ObservableObject {
    
+    
     @Published var model = ModelMusicPlayer()
     @Published var userModel = User()
+    @ObservedObject var data = Data()
     
-   
+    
+    func setCurrentSong(){
+        model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!)!)
+    }
+    
     func logingIn() ->Bool{
         userModel.logingIn()
     }
@@ -47,11 +53,11 @@ class ViewModelMusicPlayer: ObservableObject {
     }
     
     func getSongName()->String{
-        model.currentSong.name
+        model.currentSong!.name
     }
     
     func getSong() -> Song{
-        model.currentSong
+        model.currentSong!
     }
     
     func getAlbumImageName()->String{
@@ -62,13 +68,17 @@ class ViewModelMusicPlayer: ObservableObject {
         model.currentAlbum=album
     }
     
-    func updateCurrentSong(song: Song)  {
-        model.currentSong=song
+    func updateCurrentSong() {
+        
+        model.currentSong = data.getSong(songName: userModel.lastListenedSong ?? "We Rock")
+        
+        
     }
     
     func next(){
         let (_, song) =  model.next()
         updateLastListenedSong(song: song.name)
+        
     }
     
     func playPause(){
@@ -76,11 +86,18 @@ class ViewModelMusicPlayer: ObservableObject {
     }
     
     func playSong(){
+        if (!model.isCurrentSongSet()){
+           updateCurrentSong()
+        }
         model.playSong()
+        
     }
     
     func previous(){
         let (_, song) = model.previous()
         updateLastListenedSong(song: song.name)
+        
+        
     }
+    
 }

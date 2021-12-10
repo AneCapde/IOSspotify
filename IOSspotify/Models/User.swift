@@ -14,17 +14,10 @@ struct User: Identifiable {
     var name: String = ""
     var password: String = ""
     var email:String = ""
-    private var _lastListenedSong: String?
+    var lastListenedSong: String?
     var people: [NSManagedObject] = []
     
-    var lastListenedSong: String?{
-        set(newSong){
-            _lastListenedSong=newSong
-        }
-        get{
-            return _lastListenedSong
-        }
-    }
+    
     
     
     fileprivate func saveCoreData(_ managedContext: NSManagedObjectContext) {

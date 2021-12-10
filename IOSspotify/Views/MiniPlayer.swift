@@ -14,7 +14,7 @@ struct MiniPlayer: View {
     var animation: Namespace.ID
     var height = UIScreen.main.bounds.height / 3
     
-    @StateObject var data = Data()
+
     var lastListenedSong = UserDefaults.standard.string(forKey: "lastSong")
     
     @ObservedObject var viewModel : ViewModelMusicPlayer
@@ -26,8 +26,12 @@ struct MiniPlayer: View {
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
     
     @State var timer = Timer.publish(every: 1, on: .current, in:.default).autoconnect()
+    
     @State var volume: CGFloat = 0.5
+   
+
     @State var time: CGFloat = 0
+
     @State var offset:CGFloat = 0
     
     var body: some View {
@@ -165,13 +169,10 @@ struct ButtonsView: View{
     
     @ObservedObject var viewModel : ViewModelMusicPlayer
     
-    @AppStorage("lastSong", store: .standard) public var lastListenedSong: String = "No set"
-    
     var body: some View{
         Spacer()
-        Button(action: {
-                 viewModel.previous()         
-                       }, label: {
+        Button(action:
+                 viewModel.previous, label: {
                 Image(systemName:"backward.fill")
                     .font(.title2)
                     .foregroundColor(.primary)
@@ -180,15 +181,14 @@ struct ButtonsView: View{
         
         )
         Spacer()
-        Button(action: { viewModel.playPause()
-        },
+        Button(action: viewModel.playPause,
         label: {
             Image(systemName:  viewModel.playingState())
                     .font(.title2)
                     .foregroundColor(.primary)
         })
         Spacer()
-        Button(action: {viewModel.next()                  }, label: {
+        Button(action: viewModel.next, label: {
                 Image(systemName:"forward.fill")
                     .font(.title2)
                     .foregroundColor(.primary)
