@@ -21,6 +21,8 @@ struct MiniPlayer: View {
  
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
     
+    @State var timer = Timer.publish(every: 1, on: .current, in:.default).autoconnect()
+    
     // TODO
     // get phone volume value
     @State var time: CGFloat = 0
@@ -88,6 +90,9 @@ struct MiniPlayer: View {
                     //Image(systemName: "speaker.fill")
                     
                     Slider(value: $time)
+                        .onReceive(timer, perform: { _ in
+                            self.updateTimer()
+                        })
                     
                     //Image(systemName: "speaker.wave.2.fill")
                 }.padding()
@@ -113,7 +118,7 @@ struct MiniPlayer: View {
                 Divider()
             }
             .onTapGesture {
-                withAnimation(.spring()){viewModel.changeStateOdExpand(true)}
+                withAnimation(.spring()){viewModel.changeStateOdExpand(expand: true)}
             }
         )
         .cornerRadius(viewModel.expand() ? 20: 0)
@@ -134,7 +139,7 @@ struct MiniPlayer: View {
         withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.95,blendDuration: 0.95 )){
             // if val > height/3 then close view
             if value.translation.height > height {
-                viewModel.changeStateOdExpand(false)
+                viewModel.changeStateOdExpand(expand: false)
             }
             offset=0
         }

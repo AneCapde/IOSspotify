@@ -18,13 +18,13 @@ class ViewModelMusicPlayer: ObservableObject {
     
     func playingState() -> String  {
         if model.isPlaying{
-            return "play.fill"
-        }else{
             return "pause.fill"
+        }else{
+            return "play.fill"
         }
     }
-    func changeStateOdExpand(_ expand: Bool){
-        model.expandMiniMusicPlayer=expand
+    func changeStateOdExpand(expand: Bool){
+        model.expandMiniMusicPlayer = expand
     }
     
     func expand()-> Bool{
