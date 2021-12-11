@@ -14,12 +14,11 @@ struct User: Identifiable {
     var name: String = ""
     var password: String = ""
     var email:String = ""
-    var lastListenedSong: String?
+    var lastListenedSong: String? = "Fireworks"
+    var lastListenedAlbum: String? = "Katy Perry"
     var people: [NSManagedObject] = []
     
-    
-    
-    
+
     fileprivate func saveCoreData(_ managedContext: NSManagedObjectContext) {
         do {
             try managedContext.save()
@@ -38,17 +37,34 @@ struct User: Identifiable {
         person.setValue(name, forKey: "name")
         person.setValue(email, forKey: "email")
         person.setValue(password, forKey: "password")
-        person.setValue(lastListenedSong, forKey: "lastListenedSong")
+        //person.setValue(lastListenedSong, forKey: "lastListenedSong")
         
         saveCoreData(managedContext)
     }
     
-    mutating func updateLastlistenedSong(){
+    mutating func updateLastListened(field: String, entity: String){
         let managedContext = PersistenceController.shared.container.viewContext
         let person = currentUser()
         
-        person.setValue(lastListenedSong, forKey: "lastListenedSong")
+        person.setValue(field, forKey: entity)
+        
         saveCoreData(managedContext)
+        
+    }
+    
+    mutating func updateLastlistenedSong(name: String?){
+        if (name != nil){
+            lastListenedSong = name
+        }
+        updateLastListened(field: lastListenedSong!, entity: "lastListenedSong")
+    }
+    
+    
+    mutating func updateLastListenedAlbum(name: String?){
+        if (name != nil){
+            lastListenedAlbum = name
+        }
+        updateLastListened(field: lastListenedAlbum!, entity: "lastListenedAlbum")
     }
     
     mutating func logingIn() -> Bool{

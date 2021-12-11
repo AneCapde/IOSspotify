@@ -10,18 +10,33 @@ import SwiftUI
 
 class ViewModelMusicPlayer: ObservableObject {
    
-    
-    @Published var model = ModelMusicPlayer()
+
+    private var data = Data()
     @Published var userModel = User()
-    @ObservedObject var data = Data()
+    @Published var model = ModelMusicPlayer()
     
-    
-    func setCurrentSong(){
-        model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!)!)
+   
+
+    func setSongFromUserData(){
+        model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!) ??  Song(id: 0, name: "We Rock", time: "2:36", file: "song2"))
     }
     
+    func setAlbumFromUserData(){
+        model.setCurrentAlbum(album: data.getAlbum(albumName: userModel.lastListenedAlbum!) ??  Album(id: 0, name: "Camp Rock 1 & 2 Songs", image: "cover_1",
+                                                                                                      songs: [Song(id: 0, name: "We Rock", time: "2:36", file: "song2"),
+                                                                                                              Song(id: 1, name: "This is Me", time: "3:36", file: "song1"),
+                                                                                                              Song(id: 2, name: "This is Our Song", time: "1:36", file: "song2"),
+                                                                                                              Song(id: 3, name: "You are my favourite song", time: "2:26", file: "song1"),
+                                                                                                              Song(id: 4, name: "Hasta la vista", time: "3:30", file: "song2")]))
+    }
+    
+    
     func logingIn() ->Bool{
-        userModel.logingIn()
+        let isLogged = userModel.logingIn()
+        setSongFromUserData()
+        setAlbumFromUserData()
+        return isLogged
+        
     }
     
     func newUser(){
@@ -29,7 +44,11 @@ class ViewModelMusicPlayer: ObservableObject {
     }
     
     func updateLastListenedSong(song: String){
-        userModel.updateLastlistenedSong()
+        userModel.updateLastlistenedSong(name: song)
+    }
+    
+    func updateLastListenedAlbum(album: String){
+        userModel.updateLastListenedAlbum(name: album)
     }
     
     
@@ -61,23 +80,30 @@ class ViewModelMusicPlayer: ObservableObject {
     }
     
     func getAlbumImageName()->String{
-        model.currentAlbum.image
+        model.currentAlbum!.image
     }
     
     func updateCurrentAlbum(album: Album)  {
         model.currentAlbum=album
     }
     
-    func updateCurrentSong() {
-        
-        model.currentSong = data.getSong(songName: userModel.lastListenedSong ?? "We Rock")
-        
-        
+    func updateCurrentSong(song: Song) {
+        model.currentSong=song
+    }
+    
+    
+    func setUserLastSong() {
+        model.currentSong = data.getSong(songName: userModel.lastListenedSong!)
+    }
+    
+    func setUserLastAlbum(){
+        model.currentAlbum = data.getAlbum(albumName: userModel.lastListenedAlbum!)
     }
     
     func next(){
-        let (_, song) =  model.next()
+        let (album, song) =  model.next()
         updateLastListenedSong(song: song.name)
+        updateLastListenedAlbum(album: album.name)
         
     }
     
@@ -87,17 +113,18 @@ class ViewModelMusicPlayer: ObservableObject {
     
     func playSong(){
         if (!model.isCurrentSongSet()){
-           updateCurrentSong()
+            setSongFromUserData()
+            setAlbumFromUserData()
         }
         model.playSong()
-        
     }
     
     func previous(){
-        let (_, song) = model.previous()
+        let (album, song) = model.previous()
         updateLastListenedSong(song: song.name)
-        
-        
+        updateLastListenedAlbum(album: album.name)
+       
+      
     }
     
 }

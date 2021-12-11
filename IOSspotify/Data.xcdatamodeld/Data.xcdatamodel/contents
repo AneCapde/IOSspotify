@@ -2,11 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1419" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="lastListenedSong" attributeType="String" defaultValueString="We Rock"/>
+        <attribute name="lastListenedAlbum" optional="YES" attributeType="String" defaultValueString="Katy Perry"/>
+        <attribute name="lastListenedSong" optional="YES" attributeType="String" defaultValueString="Fireworks"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="Person" positionX="-54" positionY="-9" width="128" height="118"/>
     </elements>
 </model>

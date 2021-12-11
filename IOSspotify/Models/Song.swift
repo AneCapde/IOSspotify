@@ -12,7 +12,11 @@ struct Song : Hashable {
     var name: String = ""
     var time: String = ""
     var file: String = ""
-
+    
+    func getSongURL()-> URL {
+        let urlpath  = Bundle.main.path(forResource: self.file, ofType: "mp3")
+        return URL(fileURLWithPath: urlpath!)
+    }
 }
 
 

@@ -12,16 +12,20 @@ import AVFoundation
 struct ModelMusicPlayer{
     
     
-    var currentAlbum = Album()
+    var currentAlbum: Album? = Album()
     var currentSong: Song? = Song()
     var isPlaying : Bool = false
     var player = AVPlayer()
     var expandMiniMusicPlayer = false
-   
+    
+    
+    
     mutating func setCurrentSong(song: Song){
-        if(!self.isCurrentSongSet()){
             currentSong = song
-        }
+    }
+    
+    mutating func setCurrentAlbum(album: Album){
+        currentAlbum = album
     }
     
     mutating func isCurrentSongSet() -> Bool{
@@ -31,23 +35,19 @@ struct ModelMusicPlayer{
         return false
     }
     
-    
-    
-  
+
     mutating func playSong(){
-        let urlpath  = Bundle.main.path(forResource: currentSong!.file, ofType: "mp3")
-        let url =  URL(fileURLWithPath: urlpath!)
+        let url =  currentSong?.getSongURL()
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
         }catch{
             //report error
         }
         isPlaying=true
-        player = AVPlayer(url: url)
+        player = AVPlayer(url: url!)
         player.play()
     }
-    
-    
+       
     
     mutating func playPause(){
         self.isPlaying.toggle()
@@ -60,33 +60,30 @@ struct ModelMusicPlayer{
     
 
     mutating func next() -> (Album, Song) {
-        if let currentIndex = currentAlbum.songs.firstIndex(of: currentSong!){
-            if currentIndex == currentAlbum.songs.count - 1{
+        if let currentIndex = currentAlbum!.songs.firstIndex(of: currentSong!){
+            if currentIndex == currentAlbum!.songs.count - 1{
 
             } else {
                 player.pause()
-                currentSong = currentAlbum.songs[currentIndex + 1]
+                currentSong = currentAlbum!.songs[currentIndex + 1]
                 self.playSong()
             }
         }
-        
-        return (currentAlbum, currentSong!)
+        return (currentAlbum!, currentSong!)
     }
+    
         
     mutating func previous()  -> (Album, Song) {
-        if let currentIndex = currentAlbum.songs.firstIndex(of: currentSong!){
+        if let currentIndex = currentAlbum!.songs.firstIndex(of: currentSong!){
             if currentIndex == 0{
-
             } else {
                 player.pause()
-                currentSong = currentAlbum.songs[currentIndex - 1]
+                currentSong = currentAlbum!.songs[currentIndex - 1]
                 self.playSong()
             }
         }
-        return (currentAlbum, currentSong!)
-}
+        return (currentAlbum!, currentSong!)
+    }
     
-    
-    
-    
+  
 }

@@ -32,9 +32,18 @@ struct DataModel{
          let album = albums.first{
             $0.songs.contains(getSong(songName: songName)!)
         }
-        return album!
+        return album ?? nil
     }
     
+    func getAlbum(albumName: String) -> Album?{
+        let album = albums.first{ album in
+            album.name == albumName
+       }
+       return album ?? nil
+        
+    }
+    
+
      func getAlbumImageName(songName: String) -> String{
         return getAlbum(songName: songName)!.image
     }
@@ -57,6 +66,7 @@ class Data: ObservableObject {
                                            Song(id: 8, name: "Last Friday Night", time:"2:36", file: "song2"),
                                            Song(id: 9, name: "song2", time: "2:36", file: "song2")]
     
+   
     
     @Published public var albums: [Album] = [Album(id: 0, name: "Camp Rock 1 & 2 Songs", image: "cover_1",
                                  songs: [Song(id: 0, name: "We Rock", time: "2:36", file: "song2"),
@@ -70,6 +80,9 @@ class Data: ObservableObject {
                                             Song(id: 7, name: "song1", time: "2:36", file: "song2"),
                                             Song(id: 8, name: "Last Friday Night", time:"2:36", file: "song2"),
                                             Song(id: 9, name: "song2", time: "2:36", file: "song2")])]
+    
+   
+    
     
     @Published var dataModel = DataModel()
 
@@ -92,6 +105,9 @@ class Data: ObservableObject {
         dataModel.getSong(songName: songName)
     }
     
+    func getAlbum(albumName: String) -> Album?{
+        dataModel.getAlbum(albumName: albumName)
+    }
     
     func getAlbum(songName: String) -> Album?{
         dataModel.getAlbum(songName: songName)
