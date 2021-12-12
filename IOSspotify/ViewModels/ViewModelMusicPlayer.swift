@@ -18,11 +18,11 @@ class ViewModelMusicPlayer: ObservableObject {
    
 
     func setSongFromUserData(){
-        model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!)!)
+        model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!) ?? data.getAllSongs()[0])
     }
     
     func setAlbumFromUserData(){
-        model.setCurrentAlbum(album: data.getAlbum(albumName: userModel.lastListenedAlbum!)!)
+        model.setCurrentAlbum(album: data.getAlbum(albumName: userModel.lastListenedAlbum!) ?? data.getAllAlbums()[0])
     }
     
     
@@ -74,7 +74,7 @@ class ViewModelMusicPlayer: ObservableObject {
         model.currentSong!
     }
     
-    func getAlbumImageName()->String{
+    func getAlbumImageName()->UIImage{
         model.currentAlbum!.image
     }
     

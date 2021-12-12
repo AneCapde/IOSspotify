@@ -25,7 +25,7 @@ struct MenuView: View {
             })
         
         LazyVStack {
-            ForEach((self.currentAlbum?.songs ?? Data.albums.first?.songs) ?? [Song(id: 0, name: "song1", time: "2:36")] , id:\.self, content: {
+            ForEach((self.currentAlbum?.songs ?? Data.albums.first?.songs)! , id:\.self, content: {
                 song in SongCell(album: currentAlbum ?? Data.albums.first!, song: song, viewModel: viewModel)
             })
         }
@@ -39,7 +39,7 @@ struct AlbumArt: View {
     var isWithText : Bool
     var body: some View {
         ZStack(alignment: .bottom, content: {
-            Image(album.image)
+            Image(uiImage: album.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 150, height: 200, alignment: .center)
@@ -66,7 +66,7 @@ struct SongCell: View {
            
             HStack{
               
-                Image(album.image)
+                Image(uiImage: album.image)
                     .resizable()
                     .aspectRatio(contentMode:   .fill)
                     .frame(width: 55, height: 55, alignment: .center)

@@ -51,7 +51,7 @@ struct SearchView: View {
                 
                 LazyVGrid(columns:columns , spacing:20){
                     ForEach(self.currentDisplayArray , id:\.self, content: {
-                        song in SongCell(album: getAlbum(song: song), song: song, viewModel: viewModel)
+                        song in SongCell(album: getAlbum(song: song)!, song: song, viewModel: viewModel)
                     })
                 }
                 .padding(.top, 10)
@@ -61,14 +61,15 @@ struct SearchView: View {
         }
     }
 
-    private func getAlbum(song: Song) -> Album {
+    private func getAlbum(song: Song) -> Album? {
         for album in Data.albums{
             if album.songs.contains(song){
                 return album
             }
         }
-        return Album()
+        return nil
     }
+    
     private func searchSong(){
         var termporaryArray = [Song]()
         for album in Data.albums{

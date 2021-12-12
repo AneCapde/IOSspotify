@@ -14,15 +14,9 @@ struct MiniPlayer: View {
     var animation: Namespace.ID
     var height = UIScreen.main.bounds.height / 3
     
-
-    var lastListenedSong = UserDefaults.standard.string(forKey: "lastSong")
-    
     @ObservedObject var viewModel : ViewModelMusicPlayer
     
     
- 
-   
-
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
     
     @State var timer = Timer.publish(every: 1, on: .current, in:.default).autoconnect()
@@ -50,7 +44,7 @@ struct MiniPlayer: View {
                 if viewModel.expand(){Spacer(minLength: 0)}
                 
                 //FIGURE IT OUT USERDEFAULTS 
-                Image(viewModel.getAlbumImageName())
+                Image(uiImage: viewModel.getAlbumImageName())
                     .resizable()
                     .aspectRatio(contentMode:   .fill)
                     .frame(width: viewModel.expand() ? height : 55 , height: viewModel.expand() ? height :55)
