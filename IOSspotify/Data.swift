@@ -8,8 +8,8 @@
 import Foundation
 
 struct DataModel{
-    var songs = [Song()]
-    var albums = [Album()]
+    var songs : [Song]
+    var albums : [Album]
     
     
     func getAllSongsfromAlbum(albumName: String) -> [Song] {
@@ -29,10 +29,13 @@ struct DataModel{
     
     
     func getAlbum(songName: String) -> Album?{
-         let album = albums.first{
-            $0.songs.contains(getSong(songName: songName)!)
+        for album in albums{
+            let allAlbumSongs = getAllSongsfromAlbum(albumName: album.name)
+            if (allAlbumSongs.contains(getSong(songName: songName)!)){
+                return album
+            }
         }
-        return album ?? nil
+        return nil
     }
     
     func getAlbum(albumName: String) -> Album?{
@@ -45,7 +48,12 @@ struct DataModel{
     
 
      func getAlbumImageName(songName: String) -> String{
-        return getAlbum(songName: songName)!.image
+        if let albumName=getAlbum(songName: songName){
+            return albumName.image
+        }else{
+            return "cover_1"
+            
+        }
     }
     
     
@@ -55,7 +63,7 @@ class Data: ObservableObject {
     
  
     
-    @Published public var songs: [Song] = [Song(id: 0, name: "We Rock", time: "2:36", file: "song2"),
+    static let songs: [Song] = [Song(id: 0, name: "We Rock", time: "2:36", file: "song2"),
                                            Song(id: 1, name: "This is Me", time: "3:36", file: "song1"),
                                            Song(id: 2, name: "This is Our Song", time: "1:36", file: "song2"),
                                            Song(id: 3, name: "You are my favourite song", time: "2:26", file: "song1"),
@@ -68,7 +76,7 @@ class Data: ObservableObject {
     
    
     
-    @Published public var albums: [Album] = [Album(id: 0, name: "Camp Rock 1 & 2 Songs", image: "cover_1",
+    static let albums: [Album] = [Album(id: 0, name: "Camp Rock 1 & 2 Songs", image: "cover_1",
                                  songs: [Song(id: 0, name: "We Rock", time: "2:36", file: "song2"),
                                          Song(id: 1, name: "This is Me", time: "3:36", file: "song1"),
                                          Song(id: 2, name: "This is Our Song", time: "1:36", file: "song2"),
@@ -81,10 +89,10 @@ class Data: ObservableObject {
                                             Song(id: 8, name: "Last Friday Night", time:"2:36", file: "song2"),
                                             Song(id: 9, name: "song2", time: "2:36", file: "song2")])]
     
-   
     
     
-    @Published var dataModel = DataModel()
+    
+    @Published var dataModel = DataModel(songs: songs, albums: albums)
 
         
     func getAllSongsfromAlbum(albumName: String) -> [Song] {
@@ -93,11 +101,11 @@ class Data: ObservableObject {
     }
     
      func getAllSongs() -> [Song]{
-        return songs
+        return Data.songs
     }
     
      func getAllAlbums() -> [Album]{
-        return albums
+        return Data.albums
     }
     
     

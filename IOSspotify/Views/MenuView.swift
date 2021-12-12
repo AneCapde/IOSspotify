@@ -15,7 +15,7 @@ struct MenuView: View {
         ScrollView{
             ScrollView(.horizontal, showsIndicators: false, content: {
                 LazyHStack {
-                    ForEach(self.data.albums, id:\.self, content: {
+                    ForEach(Data.albums, id:\.self, content: {
                         album in
                         AlbumArt(album: album, isWithText: true).onTapGesture{
                             self.currentAlbum = album
@@ -25,8 +25,8 @@ struct MenuView: View {
             })
         
         LazyVStack {
-            ForEach((self.currentAlbum?.songs ?? self.data.albums.first?.songs) ?? [Song(id: 0, name: "song1", time: "2:36")] , id:\.self, content: {
-                song in SongCell(album: currentAlbum ?? data.albums.first!, song: song, viewModel: viewModel)
+            ForEach((self.currentAlbum?.songs ?? Data.albums.first?.songs) ?? [Song(id: 0, name: "song1", time: "2:36")] , id:\.self, content: {
+                song in SongCell(album: currentAlbum ?? Data.albums.first!, song: song, viewModel: viewModel)
             })
         }
     }

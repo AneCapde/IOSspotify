@@ -18,16 +18,11 @@ class ViewModelMusicPlayer: ObservableObject {
    
 
     func setSongFromUserData(){
-        model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!) ??  Song(id: 0, name: "We Rock", time: "2:36", file: "song2"))
+        model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!)!)
     }
     
     func setAlbumFromUserData(){
-        model.setCurrentAlbum(album: data.getAlbum(albumName: userModel.lastListenedAlbum!) ??  Album(id: 0, name: "Camp Rock 1 & 2 Songs", image: "cover_1",
-                                                                                                      songs: [Song(id: 0, name: "We Rock", time: "2:36", file: "song2"),
-                                                                                                              Song(id: 1, name: "This is Me", time: "3:36", file: "song1"),
-                                                                                                              Song(id: 2, name: "This is Our Song", time: "1:36", file: "song2"),
-                                                                                                              Song(id: 3, name: "You are my favourite song", time: "2:26", file: "song1"),
-                                                                                                              Song(id: 4, name: "Hasta la vista", time: "3:30", file: "song2")]))
+        model.setCurrentAlbum(album: data.getAlbum(albumName: userModel.lastListenedAlbum!)!)
     }
     
     
@@ -104,6 +99,7 @@ class ViewModelMusicPlayer: ObservableObject {
         let (album, song) =  model.next()
         updateLastListenedSong(song: song.name)
         updateLastListenedAlbum(album: album.name)
+       // playSong()
         
     }
     
@@ -116,15 +112,15 @@ class ViewModelMusicPlayer: ObservableObject {
             setSongFromUserData()
             setAlbumFromUserData()
         }
-        model.playSong()
+       // model.playSong()
     }
     
     func previous(){
         let (album, song) = model.previous()
         updateLastListenedSong(song: song.name)
         updateLastListenedAlbum(album: album.name)
+        playSong()
        
-      
     }
     
 }

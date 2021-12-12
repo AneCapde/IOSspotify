@@ -17,6 +17,14 @@ struct Song : Hashable {
         let urlpath  = Bundle.main.path(forResource: self.file, ofType: "mp3")
         return URL(fileURLWithPath: urlpath!)
     }
+    
+    func getSongMetaData() ->[AVMetadataItem]{
+        let asset = AVAsset(url: self.getSongURL())
+        return asset.commonMetadata
+  
+    }
+    
+    
 }
 
 

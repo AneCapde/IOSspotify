@@ -54,7 +54,8 @@ struct ModelMusicPlayer{
         if isPlaying == false {
             player.pause()
         }else {
-            player.play()
+            //player.play()
+            self.playSong()
         }
     }
     

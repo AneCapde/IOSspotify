@@ -29,7 +29,7 @@ struct TabBarMenu: View {
                                     Text("Library") }.tag(1)
                                
                                 
-                        SearchView(data: data, currentDisplayArray: data.songs, viewModel: viewModel).tabItem {
+                        SearchView(data: data, currentDisplayArray: Data.songs, viewModel: viewModel).tabItem {
                                     Image(systemName: "magnifyingglass")
                                     
                                     Text("Search")
