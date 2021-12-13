@@ -15,7 +15,9 @@ class ViewModelMusicPlayer: ObservableObject {
     @Published var userModel = User()
     @Published var model = ModelMusicPlayer()
     
-   
+    func isPlaying() -> Bool{
+        model.isPlaying
+    }
 
     func setSongFromUserData(){
         model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!)!)

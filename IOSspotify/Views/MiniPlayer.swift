@@ -151,7 +151,7 @@ struct MiniPlayer: View {
         }
     }
     func updateTimer(){
-        if (viewModel.expand() == true){
+        if (viewModel.expand() == true && viewModel.isPlaying()){
             let currentTime: CMTime = viewModel.getPlayer().currentTime()
             let total: CMTime? = viewModel.getPlayer().currentItem?.asset.duration
             
