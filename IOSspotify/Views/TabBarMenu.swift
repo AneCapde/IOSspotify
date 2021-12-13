@@ -38,7 +38,8 @@ struct TabBarMenu: View {
                             }
                     
                     
-                    MiniPlayer(animation: animation, viewModel: viewModel)
+                    if viewModel.getSongName() != ""{
+                        MiniPlayer(viewModel: viewModel, animation: animation)}
                     })
         
     }

@@ -6,25 +6,53 @@
 import Foundation
 import MediaPlayer
 import AVFoundation
-
+import SwiftUI
 
 class ViewModelMusicPlayer: ObservableObject {
    
-    @Published var model = ModelMusicPlayer()
+
+    private var data = Data()
     @Published var userModel = User()
+    @Published var model = ModelMusicPlayer()
     
+    func isPlaying() -> Bool{
+        model.isPlaying
+    }
+
+//    func setSongFromUserData(){
+//        model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!)!)
+//    }
+//
+//    func setAlbumFromUserData(){
+//        model.setCurrentAlbum(album: data.getAlbum(albumName: userModel.lastListenedAlbum!)!)
+//    }
+    
+    
+    
+    func updateTime(to: Float64){
+        model.player.seek(to: CMTimeMakeWithSeconds(to, preferredTimescale: 1), toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
+    }
    
+
     func logingIn() ->Bool{
-        userModel.logingIn()
+        let isLogged = userModel.logingIn()
+       // setSongFromUserData()
+     //   setAlbumFromUserData()
+        return isLogged
+        
     }
     
     func newUser(){
         userModel.newUser()
     }
     
-    func updateLastListenedSong(song: String){
-        userModel.updateLastlistenedSong()
-    }
+//    func updateLastListenedSong(song: String){
+//        userModel.updateLastlistenedSong(name: song)
+//    }
+//
+//    func updateLastListenedAlbum(album: String){
+//        userModel.updateLastListenedAlbum(name: album)
+//    }
     
     
     func getPlayer() -> AVPlayer{
@@ -62,13 +90,24 @@ class ViewModelMusicPlayer: ObservableObject {
         model.currentAlbum=album
     }
     
-    func updateCurrentSong(song: Song)  {
+    func updateCurrentSong(song: Song) {
         model.currentSong=song
     }
     
+//
+//    func setUserLastSong() {
+//        model.currentSong = data.getSong(songName: userModel.lastListenedSong!)
+//    }
+//
+//    func setUserLastAlbum(){
+//        model.currentAlbum = data.getAlbum(albumName: userModel.lastListenedAlbum!)
+//    }
+    
     func next(){
-        let (_, song) =  model.next()
-        updateLastListenedSong(song: song.name)
+        let (_, _) =  model.next()
+        
+       playSong()
+        
     }
     
     func playPause(){
@@ -76,11 +115,22 @@ class ViewModelMusicPlayer: ObservableObject {
     }
     
     func playSong(){
+
         model.playSong()
+//        model.player.currentItem?.addObserver(self as! NSObject, forKeyPath: #keyPath(AVPlayerItem.status), options:[.old, .new], context: nil)
     }
     
     func previous(){
-        let (_, song) = model.previous()
-        updateLastListenedSong(song: song.name)
+
+//        model.player.currentItem?.removeObserver(self as! NSObject, forKeyPath: #keyPath(AVPlayerItem.status))
+        let (_, _) = model.previous()
+
+//        if (!model.isCurrentSongSet()){
+//        //    setSongFromUserData()
+//          //  setAlbumFromUserData()
+//        }
+        
+        model.playSong()
     }
+ 
 }
