@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		077883402760FC700060294D /* SongCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778833F2760FC700060294D /* SongCardView.swift */; };
-		07FF6F192766395500D5D729 /* Data2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF6F182766395500D5D729 /* Data2.swift */; };
-		07FF6F1F27666F7B00D5D729 /* Audio in Resources */ = {isa = PBXBuildFile; fileRef = 07FF6F1E27666F7B00D5D729 /* Audio */; };
 		122C88CB2756A8AA007092FD /* TabBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C88CA2756A8AA007092FD /* TabBarMenu.swift */; };
 		122C88DA2756AE5C007092FD /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C88D92756AE5C007092FD /* MiniPlayer.swift */; };
 		126284B22762710400A49FF8 /* MuiscSliderControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126284B12762710400A49FF8 /* MuiscSliderControler.swift */; };
@@ -70,8 +68,6 @@
 
 /* Begin PBXFileReference section */
 		0778833F2760FC700060294D /* SongCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCardView.swift; sourceTree = "<group>"; };
-		07FF6F182766395500D5D729 /* Data2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data2.swift; sourceTree = "<group>"; };
-		07FF6F1E27666F7B00D5D729 /* Audio */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Audio; sourceTree = "<group>"; };
 		122C88CA2756A8AA007092FD /* TabBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenu.swift; sourceTree = "<group>"; };
 		122C88D92756AE5C007092FD /* MiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
 		126284B12762710400A49FF8 /* MuiscSliderControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuiscSliderControler.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -220,7 +216,6 @@
 				A792787627568BCB00AAD171 /* Song.swift */,
 				A792787B27568BDA00AAD171 /* Album.swift */,
 				A731FA3B276232930044D381 /* ModelMusicPlayer.swift */,
-				07FF6F182766395500D5D729 /* Data2.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,12 +248,12 @@
 		A79278F527568EB300AAD171 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				07FF6F1E27666F7B00D5D729 /* Audio */,
 				A792790727568F6900AAD171 /* song1.mp3 */,
 				A79278FF27568F6900AAD171 /* song2.mp3 */,
 			);
-			path = Audio;
-			sourceTree = "<group>";
+			name = Audio;
+			path = IOSspotify/Audio;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -365,7 +360,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A71F5124273BEB8D0062FC9D /* Preview Assets.xcassets in Resources */,
-				07FF6F1F27666F7B00D5D729 /* Audio in Resources */,
 				A792790927568F6900AAD171 /* song1.mp3 in Resources */,
 				A71F5121273BEB8D0062FC9D /* Assets.xcassets in Resources */,
 				A792790827568F6900AAD171 /* song2.mp3 in Resources */,
@@ -409,7 +403,6 @@
 				A7502284275F7CBB00DFD3A1 /* SeachView.swift in Sources */,
 				077883402760FC700060294D /* SongCardView.swift in Sources */,
 				A792789A27568D3000AAD171 /* Data.swift in Sources */,
-				07FF6F192766395500D5D729 /* Data2.swift in Sources */,
 				A731FA38276231FF0044D381 /* Persistance.swift in Sources */,
 				A79278A427568D8200AAD171 /* Blur.swift in Sources */,
 				126284B22762710400A49FF8 /* MuiscSliderControler.swift in Sources */,

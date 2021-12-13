@@ -37,7 +37,7 @@ struct ModelMusicPlayer{
     
 
     mutating func playSong(){
-        let url =  currentSong?.getSongURL()
+        let url =  currentSong?.file
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
         }catch{

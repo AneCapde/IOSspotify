@@ -7,6 +7,7 @@
 
 import Foundation
 import MediaPlayer
+import StoreKit
 
 struct DataModel{
     var songs : [Song]
@@ -57,57 +58,116 @@ struct DataModel{
 
 class Data: ObservableObject {
        
-    private static func generateSongTable() -> [Song]{
-        var songs: [Song] = []
-        let fileManager = FileManager.default
-        let enumerator:FileManager.DirectoryEnumerator = fileManager.enumerator(atPath: fileManager.currentDirectoryPath)!
-       
-        while let element = enumerator.nextObject() as? String {
-            if element.hasSuffix("mp3") {
-                songs.append(Song(fileName: element))
+    private let songDecorator: SongDecorator
+    private let albumDecorator: AlbumDecorator
+    
+    var songs: [Song] = []
+    var albums: [Album] = []
+                                     
+    static let default_songs: [Song] = [Song(name: "We Rock", time: 156.0),
+                                        Song(name: "This is Me", time: 225.5)]
+    static let default_albums: [Album] = [Album(name: "Katy Perry", songs: default_songs)]
+                                           
+    @Published var dataModel = DataModel(songs: default_songs, albums: default_albums)
+    
+    init(){
+        songDecorator = SongDecorator()
+        albumDecorator = AlbumDecorator()
+        let songsTable = generateSongTable()
+        setAllSongs(songlist: songsTable)
+        songs = songsTable
+        let allAlbums = getDefaultAlbum(songs: songs)
+        albums = [allAlbums]
+    }
+    
+    func setAllSongs(songlist: [Song]){
+        songDecorator.setAllSongs(songlist: songlist)
+    }
+    
+    func getDefaultAlbum(songs: [Song]) -> Album{
+        return albumDecorator.getDefaultAlbum(songlist: songs)
+    }
+
+    class SongDecorator: MPMediaItem{
+        
+        @Published var modelSong = Song()
+        
+        func setSongProperites(song: Song){
+            modelSong.artist=self.artist ?? "NA"
+            modelSong.name=self.title ?? "NA"
+            modelSong.image=self.artwork?.image(at: CGSize(width: 500, height: 500)) ?? UIImage(named: "default_background") ?? UIImage()
+            modelSong.time=self.playbackDuration
+            modelSong.file=self.assetURL!
+        
+        }
+        
+        func setAllSongs(songlist: [Song]){
+            for song in songlist{
+                setSongProperites(song: song)
             }
         }
-        return songs
+        
+        
+        
+
+        func getSongURL(fileName: String)-> URL {
+            let urlpath  = Bundle.main.path(forResource: fileName, ofType: "mp3")
+            return URL(fileURLWithPath: urlpath!)
+        }
+
+    }
+    
+
+    class AlbumDecorator: MPMediaItemCollection{
+        
+        @Published var modelAlbum = Album()
+        
+        func setAlbumProperites(album: Album){
+            modelAlbum.name=self.value(forProperty: MPMediaPlaylistPropertyName) as! String
+            modelAlbum.descritpion=self.value(forProperty: MPMediaPlaylistPropertyDescriptionText) as! String
+            modelAlbum.image=self.representativeItem?.artwork?.image(at: CGSize(width: 500, height: 500)) ?? UIImage(named: "default_music")!
+           
+        
+        }
+        
+        func getDefaultAlbum( songlist: [Song] ) ->Album{
+            let album = Album(name: "All", songs: songlist)
+            modelAlbum.name="All"
+            modelAlbum.songs=songlist
+            modelAlbum.image=songlist[0].image!
+            return album
+            
+        }
+        
+    
+
+        func getSongURL(fileName: String)-> URL {
+            let urlpath  = Bundle.main.path(forResource: fileName, ofType: "mp3")
+            return URL(fileURLWithPath: urlpath!)
+        }
+
     }
     
    
+    private func generateSongTable() -> [Song]{
+        var songTable: [Song] = []
+        SKCloudServiceController.requestAuthorization{ status in
+            if status == .authorized{
+                let songQuery = MPMediaQuery.songs()
+                if let userSongs = songQuery.items {
+                    let sortByPlayedDate = NSSortDescriptor(key: MPMediaItemPropertyLastPlayedDate, ascending: false)
+                     songTable = NSArray(array: userSongs).sortedArray(using: [sortByPlayedDate]) as! [Song]
+                   
+                }
+               
+            }
+             
+        }
+        return songTable
+    }
+    
+            
 
-            
-            
-    static let songs: [Song] = generateSongTable()
-    static let albums: [Album] = [Album(name: "Katy Perry", songs: songs)]
-                                        //                                 songs:
-    
-//    static let songs: [Song] = [Song(id: 0, name: "We Rock", time: "2:36", file: "song2"),
-//                                           Song(id: 1, name: "This is Me", time: "3:36", file: "song1"),
-//                                           Song(id: 2, name: "This is Our Song", time: "1:36", file: "song2"),
-//                                           Song(id: 3, name: "You are my favourite song", time: "2:26", file: "song1"),
-//                                           Song(id: 4, name: "Hasta la vista", time: "3:30", file: "song2"),
-//                                           Song(id: 5, name: "Fireworks", time: "2:36", file: "song2"),
-//                                           Song(id: 6, name: "You and Me", time: "2:36", file: "song2"),
-//                                           Song(id: 7, name: "song1", time: "2:36", file: "song2"),
-//                                           Song(id: 8, name: "Last Friday Night", time:"2:36", file: "song2"),
-//                                           Song(id: 9, name: "song2", time: "2:36", file: "song2")]
-//
-//
-//
-//    static let albums: [Album] = [Album(id: 0, name: "Camp Rock 1 & 2 Songs", image: "cover_1",
-//                                 songs: [Song(id: 0, name: "We Rock", time: "2:36", file: "song2"),
-//                                         Song(id: 1, name: "This is Me", time: "3:36", file: "song1"),
-//                                         Song(id: 2, name: "This is Our Song", time: "1:36", file: "song2"),
-//                                         Song(id: 3, name: "You are my favourite song", time: "2:26", file: "song1"),
-//                                         Song(id: 4, name: "Hasta la vista", time: "3:30", file: "song2")]),
-//                           Album(id: 1, name: "Katy Perry", image: "cover_2",
-//                                    songs: [Song(id: 5, name: "Fireworks", time: "2:36", file: "song2"),
-//                                            Song(id: 6, name: "You and Me", time: "2:36", file: "song2"),
-//                                            Song(id: 7, name: "song1", time: "2:36", file: "song2"),
-//                                            Song(id: 8, name: "Last Friday Night", time:"2:36", file: "song2"),
-//                                            Song(id: 9, name: "song2", time: "2:36", file: "song2")])]
-//
-    
-    
-    
-    @Published var dataModel = DataModel(songs: songs, albums: albums)
 
         
     func getAllSongsfromAlbum(albumName: String) -> [Song] {
@@ -116,11 +176,11 @@ class Data: ObservableObject {
     }
     
      func getAllSongs() -> [Song]{
-        return Data.songs
+        return songs
     }
     
      func getAllAlbums() -> [Album]{
-        return Data.albums
+        return albums
     }
     
     

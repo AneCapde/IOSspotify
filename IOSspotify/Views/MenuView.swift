@@ -15,7 +15,7 @@ struct MenuView: View {
         ScrollView{
             ScrollView(.horizontal, showsIndicators: false, content: {
                 LazyHStack {
-                    ForEach(Data.albums, id:\.self, content: {
+                    ForEach(data.albums, id:\.self, content: {
                         album in
                         AlbumArt(album: album, isWithText: true).onTapGesture{
                             self.currentAlbum = album
@@ -25,8 +25,8 @@ struct MenuView: View {
             })
         
         LazyVStack {
-            ForEach((self.currentAlbum?.songs ?? Data.albums.first?.songs)! , id:\.self, content: {
-                song in SongCell(album: currentAlbum ?? Data.albums.first!, song: song, viewModel: viewModel)
+            ForEach((self.currentAlbum?.songs ?? data.albums.first?.songs)! , id:\.self, content: {
+                song in SongCell(album: currentAlbum ?? data.albums.first!, song: song, viewModel: viewModel)
             })
         }
     }
@@ -57,13 +57,12 @@ struct AlbumArt: View {
 struct SongCell: View {
     var album : Album
     var song : Song
+    
     @ObservedObject var viewModel : ViewModelMusicPlayer
     @Namespace var animation
     
     var body: some View {
     
-        
-           
             HStack{
               
                 Image(uiImage: album.image)
@@ -75,9 +74,9 @@ struct SongCell: View {
                 
            
                 
-                Text(song.name).bold()
+                Text(song.name!).bold()
                 Spacer()
-                Text(song.time)
+                Text(String(format: "%.1d", song.time!))
             }
             .padding(20)
             .onTapGesture {
