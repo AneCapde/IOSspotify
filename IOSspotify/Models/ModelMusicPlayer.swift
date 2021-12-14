@@ -12,8 +12,8 @@ import AVFoundation
 struct ModelMusicPlayer{
     
     
-    var currentAlbum: Album? = Album()
-    var currentSong: Song? = Song()
+    var currentAlbum: Album?
+    var currentSong: Song? 
     var isPlaying : Bool = false
     var player = AVPlayer()
     var expandMiniMusicPlayer = false
@@ -37,7 +37,7 @@ struct ModelMusicPlayer{
     
 
     mutating func playSong(){
-        let url =  currentSong?.file
+        let url =  currentSong?.url
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
         }catch{

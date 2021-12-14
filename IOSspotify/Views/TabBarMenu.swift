@@ -36,8 +36,7 @@ struct TabBarMenu: View {
                                     
                                     }.tag(2)
                             }
-                    
-                    
+ 
                     MiniPlayer(animation: animation, viewModel: viewModel)
                     })
         

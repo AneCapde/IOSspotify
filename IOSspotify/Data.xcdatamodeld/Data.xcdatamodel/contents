@@ -3,7 +3,7 @@
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="lastListenedAlbum" optional="YES" attributeType="String" defaultValueString="Katy Perry"/>
-        <attribute name="lastListenedSong" optional="YES" attributeType="String" defaultValueString="Fireworks"/>
+        <attribute name="lastListenedSong" attributeType="String" defaultValueString="We rock"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
     </entity>

@@ -46,7 +46,7 @@ struct AlbumArt: View {
             if isWithText == true {
                 ZStack{
                     Blur(style: .dark)
-                    Text(album.name).foregroundColor(.white)
+                    Text(album.name!).foregroundColor(.white)
                 }.frame(height: 60, alignment: .center)
             }
             }).frame(width: 170, height: 200, alignment: .center)

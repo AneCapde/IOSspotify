@@ -16,15 +16,18 @@ class ViewModelMusicPlayer: ObservableObject {
     @Published var model = ModelMusicPlayer()
     
    
+    func isLibraryEmpty() -> Bool{
+        data.getAllSongs().count == 0
+    }
 
     func setSongFromUserData(){
-        model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!) ?? Song(name: "We Rock", time: 156.0))
+        model.setCurrentSong(song: data.getSong(songName: userModel.lastListenedSong!) ?? Song(name: "We Rock", time: 156.0, fileName: "song1"))
                                                                                           
     }
     
     func setAlbumFromUserData(){
-        model.setCurrentAlbum(album: data.getAlbum(albumName: userModel.lastListenedAlbum!) ??  Album(name: "Katy Perry", songs:[Song(name: "We Rock", time: 156.0),
-                                                                                                                                  Song(name: "This is Me", time: 225.5)]))
+        model.setCurrentAlbum(album: data.getAlbum(albumName: userModel.lastListenedAlbum!) ??  Album(name: "Katy Perry", songs:[Song(name: "We Rock", time: 156.0, fileName: "song1" ),
+                                                                                                                                 Song(name: "This is Me", time: 225.5, fileName:"song2" )]))
     }
     
     
@@ -100,7 +103,7 @@ class ViewModelMusicPlayer: ObservableObject {
     func next(){
         let (album, song) =  model.next()
         updateLastListenedSong(song: song.name!)
-        updateLastListenedAlbum(album: album.name)
+        updateLastListenedAlbum(album: album.name!)
        // playSong()
         
     }
@@ -120,7 +123,7 @@ class ViewModelMusicPlayer: ObservableObject {
     func previous(){
         let (album, song) = model.previous()
         updateLastListenedSong(song: song.name!)
-        updateLastListenedAlbum(album: album.name)
+        updateLastListenedAlbum(album: album.name!)
         playSong()
        
     }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		077883402760FC700060294D /* SongCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0778833F2760FC700060294D /* SongCardView.swift */; };
 		122C88CB2756A8AA007092FD /* TabBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C88CA2756A8AA007092FD /* TabBarMenu.swift */; };
 		122C88DA2756AE5C007092FD /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122C88D92756AE5C007092FD /* MiniPlayer.swift */; };
 		126284B22762710400A49FF8 /* MuiscSliderControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126284B12762710400A49FF8 /* MuiscSliderControler.swift */; };
@@ -67,7 +66,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0778833F2760FC700060294D /* SongCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCardView.swift; sourceTree = "<group>"; };
 		122C88CA2756A8AA007092FD /* TabBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarMenu.swift; sourceTree = "<group>"; };
 		122C88D92756AE5C007092FD /* MiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
 		126284B12762710400A49FF8 /* MuiscSliderControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuiscSliderControler.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -130,7 +128,6 @@
 		0778834427610F2B0060294D /* Song */ = {
 			isa = PBXGroup;
 			children = (
-				0778833F2760FC700060294D /* SongCardView.swift */,
 				126284B12762710400A49FF8 /* MuiscSliderControler.swift */,
 			);
 			path = Song;
@@ -401,7 +398,6 @@
 				A731FA3C276232930044D381 /* ModelMusicPlayer.swift in Sources */,
 				A71F511D273BEB8C0062FC9D /* IOSspotifyApp.swift in Sources */,
 				A7502284275F7CBB00DFD3A1 /* SeachView.swift in Sources */,
-				077883402760FC700060294D /* SongCardView.swift in Sources */,
 				A792789A27568D3000AAD171 /* Data.swift in Sources */,
 				A731FA38276231FF0044D381 /* Persistance.swift in Sources */,
 				A79278A427568D8200AAD171 /* Blur.swift in Sources */,
