@@ -32,6 +32,7 @@ struct LogInView: View {
             
             NavigationLink(destination: TabBarMenu(viewModel: viewModel)) {
             Text("LOG IN")}
+              
                 .font(.headline)
                 .foregroundColor(.white)
                 .padding()

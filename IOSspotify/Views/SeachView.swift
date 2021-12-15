@@ -62,7 +62,7 @@ struct SearchView: View {
     }
 
     private func getAlbum(song: Song) -> Album? {
-        for album in data.albums{
+        for album in data.getAllAlbums(){
             if album.songs.contains(song){
                 return album
             }
@@ -72,7 +72,7 @@ struct SearchView: View {
     
     private func searchSong(){
         var termporaryArray = [Song]()
-        for album in data.albums{
+        for album in data.getAllAlbums(){
             for song in album.songs{
                 if (song.name!.contains(search)){
                     termporaryArray.append(song)

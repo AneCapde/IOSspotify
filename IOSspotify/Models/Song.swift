@@ -9,6 +9,12 @@ import MediaPlayer
 
 let DEFAULT_URL:URL = URL(fileURLWithPath: "/IOSspotify/Audio")
 
+extension Song: CustomStringConvertible {
+    var description: String{
+        return "(Song title - \(String(describing: name)),of artist: \(String(describing: artist)))"
+    }
+}
+
 struct Song : Hashable {
     
     let id = UUID()
@@ -30,6 +36,10 @@ struct Song : Hashable {
         self.name=name ?? "NA"
         self.time=time ?? 0.0
         self.fileName = fileName
+    }
+    
+    static func ==(lhr: Song, rhl: Song) -> Bool{
+       lhr.fileName == rhl.fileName && lhr.artist == rhl.artist
     }
     
     func getSongURL()-> URL {
@@ -59,10 +69,11 @@ struct Song : Hashable {
         self.artist=songDecorator.artist ?? "NA"
         self.name=songDecorator.title ?? "NA"
         self.image=songDecorator.artwork?.image(at: CGSize(width: 500, height: 500)) ?? UIImage(named: "default_background")
-        self.time=songDecorator.playbackDuration ?? 0.0
+        self.time=songDecorator.playbackDuration
         self.songDecorator = songDecorator
         self.url=songDecorator.assetURL!
     }
+    
     
 
     

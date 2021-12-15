@@ -7,6 +7,12 @@
 import Foundation
 import MediaPlayer
 
+extension Album: CustomStringConvertible {
+    var description: String{
+        return "(Album title - \(String(describing: name)),songs: \(String(describing: songs)))"
+    }
+}
+
 struct Album: Hashable {
   
     let id = UUID()
@@ -17,9 +23,9 @@ struct Album: Hashable {
     
     
     init(albumDecorator: Data.AlbumDecorator, songs: [Song]){
+        self.albumDecorator = albumDecorator
         self.name = albumDecorator.representativeItem?.albumTitle!
         self.image = albumDecorator.representativeItem?.artwork?.image(at: CGSize(width: 500, height: 500)) ?? UIImage(named: "default_background")!
-        self.albumDecorator = albumDecorator
         self.songs = songs
     }
     
