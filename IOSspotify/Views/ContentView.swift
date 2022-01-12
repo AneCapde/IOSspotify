@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var viewModel = ViewModelMusicPlayer()
-    @ObservedObject var data = Data()
+    @StateObject var viewModel = ViewModelMusicPlayer()
+    @StateObject var data = Data()
     
     var body: some View {
         LogInSigInView(viewModel: viewModel, data: data)
